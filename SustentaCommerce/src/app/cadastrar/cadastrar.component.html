@@ -1,0 +1,56 @@
+<div class="fundo">
+    <a routerLink='/home'>
+        <img class="imagem" src="../../assets/img/logo" alt="logo">
+    </a>
+</div>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center fundo1">
+        <div class="col-md-6">
+            <div class="fundo2">
+                <div class="card bg-light" style="width: 100rem;">
+                    <div class="card-body">
+                        <h1 style="color: cff48a;" class="text-center">Cadastrar</h1>
+                      
+
+                        <div class="form-group">
+                            <label for="usuario">Nome</label>
+                            <input [(ngModel)]='user.usuario' type="text" class="form-control" name="usuario" id="usuario"
+                                placeholder="Seu usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input [(ngModel)]='user.emailUsuario' type="text" class="form-control" name="email" id="email" placeholder="Seu email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" id="senha" placeholder="Sua senha">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmSenha">Confirmar senha</label>
+                            <input [{ngModel}]='user.senha' type="password" class="form-control" name="confirmSenha" id="confirmSenha"
+                                placeholder="Confirme a sua senha">
+                        </div>
+
+                        <div class="text-center">
+                            <label for="">Deseja cadastrar-se como vendedor(a)?</label>
+                            <br>
+                            <input type="radio" name="usuarioVendedor" id="sim" value="true"> Sim
+                            <input type="radio" name="usuarioVendedor" id="nao" value="false" checked> Não
+                        </div>
+
+                        <hr class="mt-3">
+                        <div class="d-flex justify-content-center mt-3">
+                            <div class="d-flex p-1"><button type="submit" class="btn btn-danger" routerLink='/menu' >Cancelar</button></div>
+                            <div class="d-flex p-1"><button type="submit" class="btn btn-success" (click)='cadastrar()'>Confirmar</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

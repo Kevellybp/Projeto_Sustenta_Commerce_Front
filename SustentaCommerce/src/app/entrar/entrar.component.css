@@ -1,0 +1,18 @@
+.fundo1 {
+    background-color: #1c372c;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fundo2 {
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 57vh;
+    margin: 20vh;
+    padding: 6px;
+    box-shadow: 2px 1px 1em;
+}
