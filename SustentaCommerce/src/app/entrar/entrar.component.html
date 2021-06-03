@@ -1,3 +1,8 @@
+<div class="fundo">
+    <a routerLink='/home'>
+        <img width="120px" height="120px" class="imagem" src="../../assets/logo (2).png" alt="logo">
+    </a>
+</div>
 <div class="container-fluid">
     <div class="row d-flex justify-content-center fundo1">
         <div class="col-md-6">
@@ -7,8 +12,7 @@
                         <h1 class="text-center">Entrar</h1>
                         <div class="form-group">
                             <label for="usuario">Usuario</label>
-                            <input [(ngModel)]='userLogin.usuario' type="text" class="form-control" name="usuario" id="usuario"
-                                placeholder="Seu usuário">
+                            <input [(ngModel)]='userLogin.usuario' type="text" class="form-control" name="usuario" id="usuario" placeholder="Seu usuário">
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>

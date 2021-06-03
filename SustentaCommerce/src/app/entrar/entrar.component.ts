@@ -24,7 +24,7 @@ this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   
   environment.token = this.userLogin.token
   environment.nome = this.userLogin.nome
-  environment.emailUsuario = this.userLogin.usuario
+  environment.email = this.userLogin.usuario
   environment.usuarioVendedor = this.userLogin.usuarioVendedor
   environment.usuarioAdmnistrador = this.userLogin.usuarioAdministrador
  // if(this.userLogin.usuarioVendedor==false){

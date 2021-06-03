@@ -1,10 +1,11 @@
 import { Produtos } from "./Produtos"
 
 export class Usuario {
-    public idUsuario: number
+    public id: number
+    public nome: string
     public usuario: string
-    public emailUsuario: string
-    public senhaUsuario: string
+    public email: string
+    public senha: string
     public usuarioVendedor: boolean
     public usuarioAdministrador: boolean
     public usuario_produto: Produtos[]
