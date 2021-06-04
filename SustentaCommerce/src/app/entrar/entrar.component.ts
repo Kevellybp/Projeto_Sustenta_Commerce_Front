@@ -21,15 +21,14 @@ userLogin: UserLogin = new UserLogin
 entrar() {
 this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   this.userLogin = resp
+  this.router.navigate(['/menu'])
   
   environment.token = this.userLogin.token
   environment.nome = this.userLogin.nome
   environment.email = this.userLogin.usuario
   environment.usuarioVendedor = this.userLogin.usuarioVendedor
   environment.usuarioAdmnistrador = this.userLogin.usuarioAdministrador
- // if(this.userLogin.usuarioVendedor==false){
-    //this.router.navigate(['/menu']) 
-//  }
+  
   
 })
 }
