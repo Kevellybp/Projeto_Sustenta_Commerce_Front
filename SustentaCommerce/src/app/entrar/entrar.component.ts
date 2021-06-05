@@ -21,7 +21,7 @@ userLogin: UserLogin = new UserLogin
 entrar() {
 this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   this.userLogin = resp
-  this.router.navigate(['/menu'])
+  this.router.navigate(['/inicio'])
   
   environment.token = this.userLogin.token
   environment.nome = this.userLogin.nome

@@ -9,6 +9,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { FormsModule } from '@angular/forms';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     RodapeComponent,
     SobreNosComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
