@@ -4,23 +4,38 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-4">
                     <div class="first">
-                        <h4>Navegue</h4>
-                        <p><a routerLink="/inicio">Home</a></p>
-                        <p><a routerLink="/todos-produtos">Produtos</a></p>
-                        <p><a routerLink="/sobre-nos">Sobre nós</a></p>
+
+
+                        <div class="dropdown">
+                            <h3 class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Navegue
+                            </h3>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" routerLink='/inicio'>Home</a>
+                                <a class="dropdown-item" routerLink='/todos-produtos'>Produtos</a>
+                                <a class="dropdown-item" routerLink='/sobre-nos'>Sobre nós</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <h3 class="text-center">Certificação:</h3>
+                    <a href="https://sustentavel.com.br/selo-verde/" target="_blank"><img class="mb-4 mt-3" src="https://images-ext-1.discordapp.net/external/uSVhC48UzZWfXmRu1AAjE-GUsuDB-3bH0_QPOEriOa0/https/lh3.googleusercontent.com/proxy/ot1ESv0qITn9YrN9pBS5OPmJ0V_FOe91_FaTspJKd81QswSRbaUmq8xUjkUAn-C3nquAERwwMQjtxyTZJ6xv80b9OXtlOER8iifYDF-Q-_Bs_jgoZHsVeO86ff39"
+                            alt="Certificado selo verde"></a>
+                </div>
 
-                <div class="text-end col-md-8 col-xs-12">
+
+                <div class="d-flex justify-content-end col-md-4">
                     <div class="second">
                         <h4> Criadores</h4>
-                        <p><a href="#cards" target="_blank">Juliana</a></p>
-                        <p><a href="#cards" target="_blank">Kevelly</a></p>
-                        <p><a href="#cards" target="_blank">Roberto</a></p>
-                        <p><a href="#cards" target="_blank">Thiago</a></p>
+                        <p><a routerLink='/sobre-nos'>Juliana Sousa</a></p>
+                        <p><a routerLink='/sobre-nos'>Kevelly Braga</a></p>
+                        <p><a routerLink='/sobre-nos'>Patricia Araujo</a></p>
+                        <p><a routerLink='/sobre-nos'>Roberto Locatelli</a></p>
+                        <p><a routerLink='/sobre-nos'>Thiago Silva</a></p>
 
                     </div>
                 </div>
@@ -32,7 +47,7 @@
                 <div class="col-12">
                     <div class="line"></div>
                     <div class="second2">
-                        <p> &copy; 2021 Todos os direitos reservados</p>
+                        <p class="text-center"> &copy; 2021 Todos os direitos reservados</p>
                     </div>
                 </div>
             </div>
