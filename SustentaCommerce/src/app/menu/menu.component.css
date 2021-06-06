@@ -1,12 +1,40 @@
-.fs-16{
-    font-size:20pt;
+.fs-16 {
+    font-size: 20pt;
     font-family: 'Times New Roman', Times, serif;
-    color:black;
-    
+    color: black;
 }
-.a{
+
+.a {
     cursor: pointer;
 }
-.fonte{
+
+.fonte {
     color: rgb(42, 73, 11);
+}
+
+#divBusca {
+    border-radius: 15px;
+    width: 500px;
+    position: relative;
+}
+
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 20px;
+    font-style: italic;
+    font-size: 15px;
+    border: none;
+}
+
+#barradenavegacao {
+    height: 50px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    background-color: transparent;
+}
+
+#btnpesquisa {
+    margin-left: 80%;
 }

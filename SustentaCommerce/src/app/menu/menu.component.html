@@ -1,35 +1,43 @@
 <!---inicio Menu-->
-<nav style="background-color: transparent;" class="navbar navbar-expand-lg navbar">
+
+<body id="barradenavegacao">
+    <nav style="background-color: transparent;" class="navbar-expand-lg navbar d-flex justify-content-between">
+
+        <div class="d-flex flex-row align-items-center">
+            <p class="nav-item active">
+                <a routerLink='/inicio'><img src="https://i.imgur.com/bSLX2zv.jpg" alt="Foto do Blog" width="80px" height="80px" class="img-fluid rounded-circle"></a>
+            </p>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/inicio' style="color: gainsboro;">Sustenta Commerce</a>
+                </li>
+            </ul>
+        </div>
 
 
-    <p class="nav-item active">
-        <a routerLink='/inicio'><img src="https://i.imgur.com/bSLX2zv.jpg" alt="Foto do Blog" width="80px" height="80px" class="img-fluid rounded-circle"></a>
-    </p>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/inicio' style="color: gainsboro;">Sustenta Commerce</a>
-        </li>
-    </ul>
+        <div class="">
+            <input type="search" id="search" placeholder="Search">
+        </div>
 
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="conteudoNavbarSuportado">
 
-        <form class="form">
-            <input style="width: 50%;" class="form-control" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
-        </form>
-    </div>
 
-    <div class="">
-        <ul class="navbar-nav">
-            <li class="nav-item p-1">
-                <button class="btn btn-outline-dark">Carrinho</button>
-            </li>
-            <li class="nav-item"></li>
-            <li class="nav-item p-1">
-                <button class="btn btn-outline-dark" routerLink='/entrar'>Login
+
+
+
+
+        <div class="">
+            <ul class="navbar-nav">
+                <li class="nav-item p-1">
+                    <button class="btn btn-primary">Carrinho</button>
+                </li>
+                <li class="nav-item "></li>
+                <li class="nav-item p-1">
+                    <button class="btn btn-primary" routerLink='/entrar'>Login
                     </button>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!---fim Menu-->
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+</body>
