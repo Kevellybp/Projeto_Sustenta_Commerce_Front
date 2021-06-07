@@ -21,15 +21,14 @@ userLogin: UserLogin = new UserLogin
 entrar() {
 this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   this.userLogin = resp
-  alert(environment.token)
-  this.router.navigate(['/produtos'])
-  
-  
   environment.token = this.userLogin.token
   environment.nome = this.userLogin.nome
   environment.email = this.userLogin.usuario
   environment.usuarioVendedor = this.userLogin.usuarioVendedor
   environment.usuarioAdmnistrador = this.userLogin.usuarioAdministrador
+  alert(environment.token)
+  this.router.navigate(['/produtos'])
+  
   
   
 })
