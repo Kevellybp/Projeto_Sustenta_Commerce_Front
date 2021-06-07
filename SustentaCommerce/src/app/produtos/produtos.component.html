@@ -1,0 +1,81 @@
+<!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+    Cadastrar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome" placeholder="nome do produto">
+    </div>
+
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input [(ngModel)]='produto.descricao' type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do produto">
+    </div>
+
+    <div class="form-group">
+        <label for="precoUnitario">Preço</label>
+        <input [(ngModel)]='produto.precoUnitario' type="text" class="form-control" name="precoUnitario" id="precoUnitario" placeholder="Preço do produto">
+    </div>
+
+    <div class="form-group">
+        <label for="foto">Foto</label>
+        <input [(ngModel)]='produto.foto' type="text" class="form-control" name="foto" id="foto" placeholder="Link da foto do produto">
+    </div>
+
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input [(ngModel)]='produto.quantidade' type="text" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade dos produtos">
+    </div>
+
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="col-md-10">
+
+    <div style="display: flex; flex-flow: row;">
+
+        <div class="card" style="width: 400px; margin-left: 20%;">
+            <img class="card-img-top" src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sustentabilidade.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 400px; margin-left: 1%">
+            <img class="card-img-top" src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sustentabilidade.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 400px; margin-left: 1%">
+            <img class="card-img-top" src="http://horizonteambiental.com.br/wp-content/uploads/2020/07/Os-tr%C3%AAs-pilares-da-sustentabilidade.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+            </div>
+        </div>
+    </div>
+</div>
