@@ -38,3 +38,9 @@
 #btnpesquisa {
     margin-left: 80%;
 }
+
+.inputpesquisa {
+    border-radius: 8px;
+    position: relative;
+    width: 300px;
+}
