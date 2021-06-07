@@ -12,6 +12,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProdutosComponent } from './produtos/produtos.component';
     EntrarComponent,
     CadastrarComponent,
     InicioComponent,
-    ProdutosComponent
+    ProdutosComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
