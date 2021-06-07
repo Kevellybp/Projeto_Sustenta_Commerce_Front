@@ -11,7 +11,7 @@ export class ProdutosService {
 
   constructor(private http: HttpClient) { }
   token = { 
-    headers : new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
   getAllProdutos(): Observable<Produtos[]>{
@@ -29,7 +29,7 @@ export class ProdutosService {
   getByDescricaoProdutos(descricao: string): Observable<Produtos[]>{
     return this.http.get<Produtos[]>(`https://sustentacommerce.herokuapp.com/produtos/descricao/${descricao}`, this.token)
   }
-    postProduto(produto: Produtos): Observable<Produtos>{
-      return this.http.post<Produtos>('https://sustentacommerce.herokuapp.com/produtos', this.token)
-    }
+  postProduto(produto: Produtos): Observable<Produtos>{
+    return this.http.post<Produtos>('https://sustentacommerce.herokuapp.com/produtos', produto, this.token)
+  }
 }
