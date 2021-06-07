@@ -11,6 +11,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SobreNosComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioComponent
+    InicioComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,
