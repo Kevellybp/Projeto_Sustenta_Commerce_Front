@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { InicioComponent } from './inicio/inicio.component'
 import { ProdutosComponent } from './produtos/produtos.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'sobre-nos', component: SobreNosComponent},
   {path: 'inicio', component: InicioComponent},
-  {path: 'produtos', component: ProdutosComponent}
+  {path: 'produtos', component: ProdutosComponent},
+  {path: 'categorias', component: CategoriaComponent}
 ];
 
 @NgModule({

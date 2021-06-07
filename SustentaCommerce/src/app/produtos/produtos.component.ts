@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Produtos } from '../model/Produtos';
+import { AuthService } from '../service/auth.service';
 import { ProdutosService } from '../service/produtos.service';
 
 @Component({
@@ -13,12 +14,13 @@ export class ProdutosComponent implements OnInit {
     listaProdutos: Produtos[]
 
   constructor(private router: Router,
-    private produtosService: ProdutosService
-    
+    private produtosService: ProdutosService,
+    public authService: AuthService    
     ) { }
 
   ngOnInit() {
-
+    window.scroll(0,0);
+    this.findAllProdutos();
   }
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=>{
