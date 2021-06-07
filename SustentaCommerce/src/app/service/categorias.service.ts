@@ -24,6 +24,6 @@ export class CategoriasService {
 
   }
   postCategorias(categorias: Categorias): Observable<Categorias>{
-    return this.http.post<Categorias>('https://sustentacommerce.herokuapp.com/categorias', this.token)
+    return this.http.post<Categorias>('https://sustentacommerce.herokuapp.com/categorias', categorias, this.token)
   }
 }

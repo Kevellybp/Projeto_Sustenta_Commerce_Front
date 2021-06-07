@@ -5,7 +5,7 @@
 
         <div class="d-flex flex-row align-items-center">
             <p class="nav-item active">
-                <a routerLink='/inicio'><img src="https://i.imgur.com/bSLX2zv.jpg" alt="Foto do Blog" width="80px" height="80px" class="img-fluid rounded-circle"></a>
+                <a routerLink='/inicio'><img src="https://i.imgur.com/97buaeW.jpg" alt="Foto do Blog" width="80px" height="80px" class="img-fluid rounded-circle"></a>
             </p>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -25,15 +25,17 @@
 
 
 
-
         <div class="">
             <ul class="navbar-nav">
                 <li class="nav-item p-1">
                     <button class="btn btn-primary">Carrinho</button>
                 </li>
                 <li class="nav-item "></li>
-                <li class="nav-item p-1">
+                <li *ngIf="authService.deslogado()" class="nav-item p-1">
                     <button class="btn btn-primary" routerLink='/entrar'>Login</button>
+                </li>
+                <li *ngIf="authService.logado()" class="nav-item p-1">
+                    <button class="btn btn-primary" (click)='sair()'>Sair</button>
                 </li>
             </ul>
         </div>
