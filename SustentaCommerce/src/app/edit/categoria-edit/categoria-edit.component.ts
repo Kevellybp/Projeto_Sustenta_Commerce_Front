@@ -26,7 +26,7 @@ categoria: Categorias = new Categorias()
   }
 
   findByIdCategoria(id: number){
-    this;this.categoriaService.getByIdCategorias(id).subscribe((resp: Categorias)=>{
+    this.categoriaService.getByIdCategorias(id).subscribe((resp: Categorias)=>{
       this.categoria = resp
     })
 
