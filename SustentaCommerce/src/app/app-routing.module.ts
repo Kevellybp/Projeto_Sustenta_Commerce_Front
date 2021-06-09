@@ -7,6 +7,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { InicioComponent } from './inicio/inicio.component'
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: 'sobre-nos', component: SobreNosComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'produtos', component: ProdutosComponent},
-  {path: 'categorias', component: CategoriaComponent}
+  {path: 'categorias', component: CategoriaComponent},
+  {path: 'categoria-edit/:id', component: CategoriaEditComponent},
+  {path: 'categoria-delete/:id', component: CategoriaDeleteComponent}
 ];
 
 @NgModule({

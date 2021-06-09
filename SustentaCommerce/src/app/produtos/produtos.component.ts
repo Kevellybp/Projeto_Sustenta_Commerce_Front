@@ -13,6 +13,8 @@ export class ProdutosComponent implements OnInit {
     produto: Produtos = new Produtos
     listaProdutos: Produtos[]
 
+    
+
   constructor(private router: Router,
     private produtosService: ProdutosService,
     public authService: AuthService    
