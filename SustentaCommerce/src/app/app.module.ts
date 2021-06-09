@@ -13,6 +13,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
     CadastrarComponent,
     InicioComponent,
     ProdutosComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CategoriaEditComponent,
+    CategoriaDeleteComponent
   ],
   imports: [
     BrowserModule,
