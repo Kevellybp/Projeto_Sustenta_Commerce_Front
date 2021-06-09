@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { AuthService } from '../service/auth.service';
+import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
 @Component({
@@ -13,11 +15,16 @@ export class ProdutosComponent implements OnInit {
     produto: Produtos = new Produtos
     listaProdutos: Produtos[]
 
+    listaCategorias: Categorias[]
+    idCategoria: number
+    categoria: Categorias = new Categorias()
     
 
   constructor(private router: Router,
     private produtosService: ProdutosService,
-    public authService: AuthService    
+    public authService: AuthService ,
+    private categoriaService: CategoriasService
+   
     ) { }
 
   ngOnInit() {
@@ -29,7 +36,18 @@ export class ProdutosComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-  cadastrarProduto(){
+  findAllCategorias(){
+    this.categoriaService.getAllCategorias().subscribe((resp: Categorias[])=>{
+      this.listaCategorias = resp
+    })
+  }
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias )=>{
+      this.categoria = resp
+    })
+
+  }
+    cadastrarProduto(){
     this.produtosService.postProduto(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
       alert('Muito bem! Produto cadastrado com sucesso!')
@@ -37,5 +55,5 @@ export class ProdutosComponent implements OnInit {
       this.produto = new Produtos()
     })
   }
-
+ 
 }
