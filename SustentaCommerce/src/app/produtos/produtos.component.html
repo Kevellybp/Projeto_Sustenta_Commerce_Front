@@ -6,6 +6,10 @@
 <br>
 <br>
 <!-- Botão para acionar modal -->
+
+
+<div class="container" style="background-color: #d4e0bb;">
+    <button *ngIf="authService.logado()" type="button" class="btn btn-primary d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
 <div class="container">
     <button *ngIf="authService.logado()" type="button" class="btn btn-primary d-flex justify-content-center"
         data-toggle="modal" data-target="#modalExemplo">
@@ -86,7 +90,7 @@
 
 
 
-<div class="row">
+<div class="row" style="background-color: #d4e0bb;">
     <!--div envolvendo todos os cards-->
     <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
 
@@ -121,7 +125,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Descrição do produto</h5>
+                <h5 class="modal-title" id="TituloModalCentralizado">Descrição do produto </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -146,3 +150,4 @@
         </div>
     </div>
 </div>
+
