@@ -6,7 +6,9 @@
 <br>
 <br>
 <!-- Botão para acionar modal -->
-<div class="container">
+
+
+<div class="container" style="background-color: #d4e0bb;">
     <button *ngIf="authService.logado()" type="button" class="btn btn-primary d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
         Cadastrar
     </button>
@@ -17,7 +19,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div  class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -67,7 +69,7 @@
 
 
 
-<div class="row">
+<div class="row" style="background-color: #d4e0bb;">
     <!--div envolvendo todos os cards-->
     <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
 
@@ -106,15 +108,15 @@
           </button>
             </div>
             <div class="modal-body">
-                <div class="row">
+                <div class="row" *ngFor='let item of listaProdutos'>
                     <div class="col-md-6">
-                        <img src="{{produto.foto}}" alt="foto do produto">
+                        <img src="{{item.foto}}" alt="foto do produto">
                     </div>
                     <div class="col-md-6">
-                        <h1>{{produto.nome}}</h1>
-                        <p>R${{produto.precoUnitario}}</p>
-                        <p>{{produto.descricao}}</p>
-                        <p>{{produto.quantidade}}</p>
+                        <h1>{{item.nome}}</h1>
+                        <p>R${{item.precoUnitario}}</p>
+                        <p>{{item.descricao}}</p>
+                        <p>{{item.quantidade}}</p>
                     </div>
                 </div>
             </div>

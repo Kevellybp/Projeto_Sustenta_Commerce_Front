@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Categorias } from '../model/Categorias';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   nome = environment.nome
+
+  listaCategorias: Categorias[] 
 
   constructor(private router: Router, public authService: AuthService) { }
 
