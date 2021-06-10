@@ -1,17 +1,17 @@
 <!---inicio Menu -->
 
-<body style="height: 13vh;" id="barradenavegacao">
+<body style="height: 11vh;" id="barradenavegacao">
     <nav style="background-color: transparent;" class="navbar-expand-lg navbar d-flex justify-content-between">
 
         <div class="d-flex flex-row align-items-center">
             <p class="nav-item active">
-                <a routerLink='/inicio'><img src="https://i.imgur.com/jbOodeu.png" alt="Foto do Blog" width="80px" height="80px" class=""></a>
+                <a routerLink='/inicio'><img src="https://i.imgur.com/R0nHciz.png" alt="Foto do Blog" width="70px" height="70px" class=""></a>
             </p>
             
-            <h4 style="font-size: 15pt; font-family: American Typewriter, serif; margin-left: 6px;"> Sustenta Commerce </h4>
+            <h4 style="font-size: 15pt; font-family: American Typewriter, serif; margin-left: 6px; margin-bottom: 15px;"> Sustenta Commerce </h4>
 
             <div class="dropdown">
-                <button class="btn btn-transparent dropdown-toggle btnCategoria text-bold mb-1 ml-2" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-transparent dropdown-toggle btnCategoria text-bold mb-3 ml-2" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categoria  
               </button>
                 <div *ngFor="let item of listaCategorias" class="dropdown-menu " aria-labelledby="dropdownMenuButton">
@@ -46,7 +46,7 @@
                     <a class="ml-4 pLogin" routerLink='/entrar'>Login</a>
                 </li>
                 <li *ngIf="authService.logado()" class="nav-item p-1">
-                    <button class="btn btn-primary" (click)='sair()'>Sair</button>
+                    <a class="btn btn-primary" (click)='sair()'>Sair</a>
                 </li>
             </ul>
         </div>
