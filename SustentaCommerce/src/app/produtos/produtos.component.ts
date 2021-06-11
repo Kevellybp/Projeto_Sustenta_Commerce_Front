@@ -45,6 +45,7 @@ export class ProdutosComponent implements OnInit {
       this.produto = new Produtos()
     })
   }
+  
   findByIdCategoria(){
     this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
       this.categoria = resp
@@ -55,6 +56,6 @@ export class ProdutosComponent implements OnInit {
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
     })
-  }
+  } 
 
 }
