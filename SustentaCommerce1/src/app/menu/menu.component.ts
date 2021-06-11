@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { AuthService } from '../service/auth.service';
+import { CategoriasService } from '../service/categorias.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,12 +13,19 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   nome = environment.nome
+  idCategoria: number
+  listaCategorias: Categorias[]
+  categoria: Categorias = new Categorias()
 
-  listaCategorias: Categorias[] 
-
-  constructor(private router: Router, public authService: AuthService) { }
+  constructor(
+    private router: Router, 
+    public authService: AuthService,
+    private categoriaService: CategoriasService
+    ){}
 
   ngOnInit() {
+    window.scroll(0,0);
+    this.getAllCategorias();
   }
 
   sair() {
@@ -29,4 +37,16 @@ export class MenuComponent implements OnInit {
     environment.usuarioVendedor = false
     environment.id = 0
   }
+
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
+      this.categoria = resp
+    })
+  }
+  getAllCategorias(){
+    this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
+      this.listaCategorias = resp
+    })
+  }
+
 }

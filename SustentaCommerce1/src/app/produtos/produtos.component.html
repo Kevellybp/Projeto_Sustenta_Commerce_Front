@@ -54,8 +54,16 @@
                     <label for="quantidade">Quantidade</label>
                     <input [(ngModel)]='produto.quantidade' type="text" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade dos produtos">
                 </div>
-                <p>Deseja <a data-dismiss="modal" routerLink='/categorias'>cadastrar um novo departamento?</a></p>
-
+                
+                <!--div class="form-group">
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/categorias'>cadastre um novo</a>:
+                    </label>
+                    <select name="tema" id="categorias" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                      <option *ngFor='let item of listaCategorias' value="{{item.id}}">
+                        {{item.departamentoProduto}}
+                      </option>
+                    </select>
+                  </div-->
 
             </div>
 

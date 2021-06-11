@@ -31,7 +31,6 @@
     height: 90px;
     width: 100%;
     z-index: 10;
-    position: fixed;
     background-color: #d4e0bb;
 }
 
@@ -40,22 +39,24 @@
     position: relative;
     width: 600px;
     justify-content: center;
-    border-color: #6e6d6d; 
-    border-width: 2px; 
-    
+    border-color: #6e6d6d;
+    border-width: 2px;
 }
-.btnCategoria{
+
+.btnCategoria {
     font-size: 15pt;
     font-family: American Typewriter, serif;
-   
 }
-.fa-shopping-cart{
+
+.fa-shopping-cart {
     font-size: 25pt;
 }
-.fa-search{
+
+.fa-search {
     font-size: 17pt;
 }
-.pLogin{
+
+.pLogin {
     font-size: 15pt;
     color: black;
     font-family: American Typewriter, serif;
@@ -70,5 +71,4 @@
 .ul-navbar-categorias .item-ul-navbar-categoria:hover {
     background-color: var(--background-green);
 }
-
 
