@@ -29,7 +29,7 @@ export class ProdutosComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
     this.findAllProdutos();
-    this.getAllCategorias();
+    //this.getAllCategorias();
   }
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=>{
@@ -44,6 +44,7 @@ export class ProdutosComponent implements OnInit {
       this.produto = new Produtos()
     })
   }
+  /*
   findByIdCategoria(){
     this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
       this.categoria = resp
@@ -53,6 +54,6 @@ export class ProdutosComponent implements OnInit {
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
     })
-  }
+  } */
 
 }

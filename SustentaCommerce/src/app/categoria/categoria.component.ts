@@ -26,7 +26,7 @@ listaCategorias: Categorias[]
 
   findAllCategorias(){
     this.categoriasService.getAllCategorias().subscribe((resp: Categorias[])=>{
-this.listaCategorias = resp
+    this.listaCategorias = resp
     })
   }
   cadastrarCategoria(){
