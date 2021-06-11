@@ -18,12 +18,12 @@ export class ProdutosComponent implements OnInit {
     listaCategorias: Categorias[]
     categoria: Categorias = new Categorias()
 
-    
-
+  
   constructor(private router: Router,
     private produtosService: ProdutosService,
     public authService: AuthService,
-    private categoriaService: CategoriasService  
+    private categoriaService: CategoriasService
+   
     ) { }
 
   ngOnInit() {
