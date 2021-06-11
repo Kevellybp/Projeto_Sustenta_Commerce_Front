@@ -31,8 +31,8 @@
     height: 90px;
     width: 100%;
     z-index: 10;
-    position: fixed;
-    background-color: #ffffff;
+  
+    background-color: #d4e0bb;
 }
 
 #btnpesquisa {
@@ -40,10 +40,10 @@
 }
 
 .inputpesquisa {
-    border-radius: 8px;
+    border-radius: 50px;
     position: relative;
     width: 600px;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     justify-content: center;
     border-color: #6e6d6d; 
     border-width: 2px; 
@@ -55,16 +55,16 @@
    
 }
 .fa-shopping-cart{
-    font-size: 30pt;
+    font-size: 25pt;
     margin-bottom: 1%;  
 }
 .fa-search{
     font-size: 17pt;
    
-    margin-bottom: 5%;    
+    margin-bottom: 50%;    
 }
 .pLogin{
-    font-size: 17pt;
+    font-size: 15pt;
     color: black;
     font-family: American Typewriter, serif;
 }
