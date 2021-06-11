@@ -14,19 +14,12 @@
                 <button class="btn btn-transparent dropdown-toggle btnCategoria text-bold mb-3 ml-2" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categoria  
               </button>
-                <div *ngFor="let item of listaCategorias" class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">{{item.id}}</a>
+                <div  class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                  <a *ngFor="let item of listaCategorias" class="dropdown-item" href="{{item.id}}">{{item.departamentoProduto}}</a>
                   
                 </div>
               
-            <!--<ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link dropdown" 
-                    routerLink='/inicio' 
-                    
-                    style="color: gainsboro;">Categoria</a>
-                </li>
-            </ul> -->
+
         </div>
 
         </div>
@@ -48,10 +41,10 @@
                 <li *ngIf="authService.logado()" class="nav-item p-1">
                     <a class="btn btn-primary" (click)='sair()'>Sair</a>
                 </li>
-            </ul>
+            </ul>          
         </div>
-
-
     </nav>
+   
+
 </body>
 
