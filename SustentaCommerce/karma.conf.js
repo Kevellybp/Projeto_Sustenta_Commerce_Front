@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/SustentaCommerce'),
+      dir: require('path').join(__dirname, './coverage/sustentaCommerce'),
       subdir: '.',
       reporters: [
         { type: 'html' },

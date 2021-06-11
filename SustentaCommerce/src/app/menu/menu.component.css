@@ -1,0 +1,70 @@
+.fs-16 {
+    font-size: 20pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.a {
+    cursor: pointer;
+}
+
+.fonte {
+    color: rgb(42, 73, 11);
+}
+
+#divBusca {
+    border-radius: 15px;
+    width: 500px;
+    position: relative;
+}
+
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 20px;
+    font-style: italic;
+    font-size: 15px;
+    border: none;
+}
+
+#barradenavegacao {
+    height: 90px;
+    width: 100%;
+    z-index: 10;
+  
+    background-color: #d4e0bb;
+}
+
+#btnpesquisa {
+    margin-left: 80%;
+}
+
+.inputpesquisa {
+    border-radius: 50px;
+    position: relative;
+    width: 600px;
+    margin-bottom: 2%;
+    justify-content: center;
+    border-color: #6e6d6d; 
+    border-width: 2px; 
+    
+}
+.btnCategoria{
+    font-size: 15pt;
+    font-family: American Typewriter, serif;
+   
+}
+.fa-shopping-cart{
+    font-size: 25pt;
+    margin-bottom: 1%;  
+}
+.fa-search{
+    font-size: 17pt;
+   
+    margin-bottom: 50%;    
+}
+.pLogin{
+    font-size: 15pt;
+    color: black;
+    font-family: American Typewriter, serif;
+}

@@ -1,0 +1,30 @@
+.fundo {
+    background-color: rgb( 255, 255, 255);
+    height: 35vh;
+}
+
+.fundo1 {
+    background-color: white;
+    height: 25vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fundo2 {
+    background-color: transparent;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 35vh;
+    margin: 20vh;
+    padding: 0.5px;
+}
+
+.bg {
+    background-image: url(https://images.tcdn.com.br/img/img_prod/817885/papel_scrapbook_candy_color_verde_limao_240g_color_plus_1748_1_20200718023734.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+}
