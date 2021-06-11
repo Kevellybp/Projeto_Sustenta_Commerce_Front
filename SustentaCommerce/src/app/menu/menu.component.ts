@@ -46,6 +46,7 @@ export class MenuComponent implements OnInit {
   getAllCategorias(){
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
+      
     })
   }
 

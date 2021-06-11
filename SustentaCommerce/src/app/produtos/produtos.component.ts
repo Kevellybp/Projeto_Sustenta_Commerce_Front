@@ -18,12 +18,12 @@ export class ProdutosComponent implements OnInit {
     listaCategorias: Categorias[]
     categoria: Categorias = new Categorias()
 
-    
-
+  
   constructor(private router: Router,
     private produtosService: ProdutosService,
     public authService: AuthService,
-    private categoriaService: CategoriasService  
+    private categoriaService: CategoriasService
+   
     ) { }
 
   ngOnInit() {
@@ -36,7 +36,18 @@ export class ProdutosComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-  cadastrarProduto(){
+  findAllCategorias(){
+    this.categoriaService.getAllCategorias().subscribe((resp: Categorias[])=>{
+      this.listaCategorias = resp
+    })
+  }
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias )=>{
+      this.categoria = resp
+    })
+
+  }
+    cadastrarProduto(){
     this.produtosService.postProduto(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
       alert('Muito bem! Produto cadastrado com sucesso!')
@@ -44,11 +55,8 @@ export class ProdutosComponent implements OnInit {
       this.produto = new Produtos()
     })
   }
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
-      this.categoria = resp
-    })
-  }
+
+
   getAllCategorias(){
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
