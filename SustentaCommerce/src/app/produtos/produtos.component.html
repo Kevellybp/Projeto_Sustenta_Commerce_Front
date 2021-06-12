@@ -1,10 +1,6 @@
 <app-menu></app-menu>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
 <!-- Botão para acionar modal -->
 
 
@@ -18,22 +14,23 @@
         Logar
     </button>
 
-</div>
+</div>   
 
-<!-- Modal -->
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="fundo ">
+<!-- Modal do cadastrar -->
+<div class="modal fade " id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content ">
+            <div class="modal-header ">
                 <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
 
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="nome">Nome</label>
                     <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome"
                         placeholder="nome do produto">
@@ -87,29 +84,30 @@
 </div>
 
 
-
-<div class="row" style="background-color: #d4e0bb;">
+<div class="row" >
     <!--div envolvendo todos os cards-->
-    <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
+    <div class="col-sm-2 mt-3" style="margin-left: 100px; " *ngFor='let produto of listaProdutos'>
 
         <!--cada card com o produto-->
-        <div class="card" [routerLink]="['/produto', produto.id]">
-            <div class="d-flex justify-content-center">
-                <img class="img-fluid" alt="Imagem do produto" src="{{produto.foto}}">
+        <div class="card fundoModal " style="width: 90%" [routerLink]="['/produto', produto.id]">
+            <div class="d-flex justify-content-center mt-3">
+                <img class="img-fluid" width="150" height="150" alt="Imagem do produto" src="{{produto.foto}}">
             </div>
-            <div class="card-body text-center">
-                <h4 class="nome">{{produto.nome}}</h4>
+            <div class="card-body text-center" >
+                <h4 class="nome " style="font-size: 30px; font-family: American Typewriter, serif;" >{{produto.nome}}</h4>
                 <small class="text-muted"></small>
-                <p id="preco">R$ {{produto.precoUnitario}}</p>
+                <p id="preco">R$ {{produto.precoUnitario}},00</p>
+                <Button style="color: rgb(110, 110, 110); border-radius: 15%; border-color: #D3D3D3;">
                 <a  [routerLink]="['/produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver
                     produto</a>
+                </Button>
             </div>
         </div>
 
     </div>
 </div>
 
-
+</div>
 <app-rodape></app-rodape>
 
 
@@ -118,7 +116,7 @@
 
 
 <!-- Modal -->
-<div [routerLink]="['/produto', produto.id]" class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+<div [routerLink]="['/produto', produto.id]" class="modal fade " id="ExemploModalCentralizado" tabindex="-1" role="dialog"
     aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
