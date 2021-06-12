@@ -3,6 +3,10 @@
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
+.fs{
+    color: black;
+    font-family: American Typewriter, serif;
+}
 
 .a {
     cursor: pointer;
@@ -41,6 +45,7 @@
     justify-content: center;
     border-color: #6e6d6d;
     border-width: 2px;
+
 }
 
 .btnCategoria {
@@ -70,5 +75,11 @@
 
 .ul-navbar-categorias .item-ul-navbar-categoria:hover {
     background-color: var(--background-green);
+    color: rgb(0, 0, 0);
+    font-family: American Typewriter, serif;
+}
+.l1{
+    color: rgb(0, 0, 0);
+    font-family: American Typewriter, serif;
 }
 

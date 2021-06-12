@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { AuthService } from '../service/auth.service';
@@ -18,18 +19,18 @@ export class ProdutosComponent implements OnInit {
     listaCategorias: Categorias[]
     categoria: Categorias = new Categorias()
 
-  
+    
+
   constructor(private router: Router,
     private produtosService: ProdutosService,
     public authService: AuthService,
-    private categoriaService: CategoriasService
-   
+    private categoriaService: CategoriasService  
     ) { }
 
   ngOnInit() {
     window.scroll(0,0);
     this.findAllProdutos();
-    this.getAllCategorias();
+    this.findAllCategorias();
   }
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=>{
@@ -44,15 +45,17 @@ export class ProdutosComponent implements OnInit {
       this.produto = new Produtos()
     })
   }
+  
   findByIdCategoria(){
     this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
       this.categoria = resp
     })
   }
-  getAllCategorias(){
+  findAllCategorias(){
+    console.log(environment.token)
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
     })
-  }
+  } 
 
 }
