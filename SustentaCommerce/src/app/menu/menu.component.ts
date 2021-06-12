@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
     environment.token = ''
     environment.nome = ''
     environment.email = ''
-    environment.usuarioAdmnistrador = false
+    environment.usuarioAdministrador = false
     environment.usuarioVendedor = false
     environment.id = 0
   }

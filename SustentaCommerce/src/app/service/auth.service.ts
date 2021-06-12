@@ -38,4 +38,16 @@ export class AuthService {
 
     return ok
   }
+
+  vendedor() {
+    let usuarioVendedor: boolean = false
+
+    if(environment.usuarioVendedor == true) {
+      if(environment.usuarioAdministrador == false) {
+        usuarioVendedor = true
+      }
+    }
+
+    return usuarioVendedor
+  }
 }
