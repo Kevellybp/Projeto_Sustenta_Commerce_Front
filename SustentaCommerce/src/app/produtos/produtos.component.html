@@ -1,10 +1,6 @@
 <app-menu></app-menu>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
 <!-- Botão para acionar modal -->
 
 
@@ -23,119 +19,130 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+
+                <div class="fundo ">
+                    <!-- Modal do cadastrar -->
+                    <div class="modal fade " id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog " role="document">
+                            <div class="modal-content ">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
+                                </div>
+                                <div class="modal-body ">
 
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome" placeholder="nome do produto">
-                </div>
+                                    <div class="form-group ">
+                                        <label for="nome">Nome</label>
+                                        <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome" placeholder="nome do produto">
+                                    </div>
 
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input [(ngModel)]='produto.descricao' type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do produto">
-                </div>
+                                    <div class="form-group">
+                                        <label for="descricao">Descrição</label>
+                                        <input [(ngModel)]='produto.descricao' type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do produto">
+                                    </div>
 
-                <div class="form-group">
-                    <label for="precoUnitario">Preço</label>
-                    <input [(ngModel)]='produto.precoUnitario' type="text" class="form-control" name="precoUnitario" id="precoUnitario" placeholder="Preço do produto">
-                </div>
+                                    <div class="form-group">
+                                        <label for="precoUnitario">Preço</label>
+                                        <input [(ngModel)]='produto.precoUnitario' type="text" class="form-control" name="precoUnitario" id="precoUnitario" placeholder="Preço do produto">
+                                    </div>
 
-                <div class="form-group">
-                    <label for="foto">Foto</label>
-                    <input [(ngModel)]='produto.foto' type="text" class="form-control" name="foto" id="foto" placeholder="Link da foto do produto">
-                </div>
+                                    <div class="form-group">
+                                        <label for="foto">Foto</label>
+                                        <input [(ngModel)]='produto.foto' type="text" class="form-control" name="foto" id="foto" placeholder="Link da foto do produto">
+                                    </div>
 
-                <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input [(ngModel)]='produto.quantidade' type="text" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade dos produtos">
-                </div>
+                                    <div class="form-group">
+                                        <label for="quantidade">Quantidade</label>
+                                        <input [(ngModel)]='produto.quantidade' type="text" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade dos produtos">
+                                    </div>
 
-                <div class="form-group">
-                    <label for="texto">Escolha uma categoria <a data-dismiss="modal" routerLink='/categorias'> ou
+                                    <div class="form-group">
+                                        <label for="texto">Escolha uma categoria <a data-dismiss="modal" routerLink='/categorias'> ou
                             cadastre uma nova</a>:
                     </label>
-                    <select [(ngModel)]='idCategoria' (change)='findByIdCategoria()' name="tema" id="categorias" class="form-control">
+                                        <select [(ngModel)]='idCategoria' (change)='findByIdCategoria()' name="tema" id="categorias" class="form-control">
                         <option *ngFor='let item of listaCategorias' value="{{item.id}}">
                             {{item.departamentoProduto}}
                         </option>
                     </select>
-                </div>
+                                    </div>
 
-            </div>
+                                </div>
 
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" (click)='cadastrarProduto()' data-dismiss="modal">Confirmar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="row" style="background-color: #d4e0bb;">
-    <!--div envolvendo todos os cards-->
-    <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
-
-        <!--cada card com o produto-->
-        <div class="card" [routerLink]="['/produto', produto.id]">
-            <div class="d-flex justify-content-center">
-                <img class="img-fluid" alt="Imagem do produto" src="{{produto.foto}}">
-            </div>
-            <div class="card-body text-center">
-                <h4 class="nome">{{produto.nome}}</h4>
-                <small class="text-muted"></small>
-                <p id="preco">R$ {{produto.precoUnitario}}</p>
-                <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver
-                    produto</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<app-rodape></app-rodape>
-
-
-
-
-
-
-<!-- Modal -->
-<div [routerLink]="['/produto', produto.id]" class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Descrição do produto </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div *ngFor='let item of listaProdutos'>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="{{item.foto}}" alt="foto do produto">
-                        </div>
-                        <div class="col-md-6">
-                            <h1>{{item.nome}}</h1>
-                            <p>R${{item.precoUnitario}}</p>
-                            <p>{{item.descricao}}</p>
-                            <p>{{item.quantidade}}</p>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-success" (click)='cadastrarProduto()' data-dismiss="modal">Confirmar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div class="row">
+                        <!--div envolvendo todos os cards-->
+                        <div class="col-sm-2 mt-3" style="margin-left: 100px; " *ngFor='let produto of listaProdutos'>
+
+                            <!--cada card com o produto-->
+                            <div class="card fundoModal " style="width: 90%" [routerLink]="['/produto', produto.id]">
+                                <div class="d-flex justify-content-center mt-3">
+                                    <img class="img-fluid" width="150" height="150" alt="Imagem do produto" src="{{produto.foto}}">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h4 class="nome " style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</h4>
+                                    <small class="text-muted"></small>
+                                    <p id="preco">R$ {{produto.precoUnitario}},00</p>
+                                    <Button style="color: rgb(110, 110, 110); border-radius: 15%; border-color: #D3D3D3;">
+                <a  [routerLink]="['/produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver
+                    produto</a>
+                </Button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/produto-edit', item.id]">Editar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" [routerLink]="['/produto-delete', item.id]">Apagar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                <app-rodape></app-rodape>
+
+
+
+
+
+
+                <!-- Modal -->
+                <<<<<<< HEAD <div [routerLink]="['/produto', produto.id]" class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                    =======
+                    <div [routerLink]="['/produto', produto.id]" class="modal fade " id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                        >>>>>>> 426b46dcb3337e68c6cd4727f975b868216537b3
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="TituloModalCentralizado">Descrição do produto </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                                </div>
+                                <div *ngFor='let item of listaProdutos'>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="{{item.foto}}" alt="foto do produto">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h1>{{item.nome}}</h1>
+                                                <p>R${{item.precoUnitario}}</p>
+                                                <p>{{item.descricao}}</p>
+                                                <p>{{item.quantidade}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/produto-edit', item.id]">Editar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" [routerLink]="['/produto-delete', item.id]">Apagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
