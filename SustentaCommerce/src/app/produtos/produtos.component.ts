@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
@@ -25,7 +24,7 @@ export class ProdutosComponent implements OnInit {
 
     
 
-  constructor(private router: Router,
+  constructor(
     private produtosService: ProdutosService,
     public authService: AuthService,
     private categoriaService: CategoriasService,

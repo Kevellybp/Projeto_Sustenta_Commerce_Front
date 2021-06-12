@@ -17,10 +17,8 @@ export class VisualizarProdutoComponent implements OnInit {
   
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    private categoriaService: CategoriasService,
     public authService: AuthService
     ) { }
 
