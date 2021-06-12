@@ -62,8 +62,10 @@
                                         <label for="texto">Escolha uma categoria <a data-dismiss="modal" routerLink='/categorias'> ou
                             cadastre uma nova</a>:
                     </label>
-                                        <select [(ngModel)]='idCategoria' (change)='findByIdCategoria()' name="tema" id="categorias" class="form-control">
-                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">
+                    <select [(ngModel)]='idCategoria' (change)='findByIdCategoria()' name="tema" id="categorias"
+                        class="form-control">
+                        <option 
+                        *ngFor='let item of listaCategorias | orderBy: key: reverse' value="{{item.id}}">
                             {{item.departamentoProduto}}
                         </option>
                     </select>
@@ -79,6 +81,9 @@
                         </div>
                     </div>
 
+<div class="row" style="background-color: #d4e0bb;">
+    <!--div envolvendo todos os cards-->
+    <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos | orderBy: key: reverse'>
 
                     <div class="row">
                         <!--div envolvendo todos os cards-->
@@ -123,26 +128,28 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                                </div>
-                                <div *ngFor='let item of listaProdutos'>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <img src="{{item.foto}}" alt="foto do produto">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <h1>{{item.nome}}</h1>
-                                                <p>R${{item.precoUnitario}}</p>
-                                                <p>{{item.descricao}}</p>
-                                                <p>{{item.quantidade}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/produto-edit', item.id]">Editar</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal" [routerLink]="['/produto-delete', item.id]">Apagar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            <div  *ngFor='let item of listaProdutos | orderBy: key: reverse'>
+            <div class="modal-body">
+                <div class="row">
+                     <div class="col-md-6">
+                        <img src="{{item.foto}}" alt="foto do produto">
                     </div>
+                    <div class="col-md-6">
+                        <h1>{{item.nome}}</h1>
+                        <p>R${{item.precoUnitario}}</p>
+                        <p>{{item.descricao}}</p>
+                        <p>{{item.quantidade}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                [routerLink]="['/produto-edit', item.id]">Editar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" 
+                [routerLink]="['/produto-delete', item.id]">Apagar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

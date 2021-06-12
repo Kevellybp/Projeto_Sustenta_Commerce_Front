@@ -66,7 +66,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let i of listaCategorias'>
+                    <tr *ngFor='let i of listaCategorias | orderBy: key: reverse'>
                         <th>{{i.id}}</th>
                         <td>{{i.departamentoProduto}}</td>
                         <td class="d-flex justify-content-end">

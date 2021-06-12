@@ -17,6 +17,9 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 
 @NgModule({
@@ -34,6 +37,7 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
     CategoriaDeleteComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
+    AlertasComponent,
     VisualizarProdutoComponent
   ],
   imports: [
@@ -41,7 +45,9 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

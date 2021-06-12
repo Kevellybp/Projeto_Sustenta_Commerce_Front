@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from 'src/app/model/Produtos';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 
 @Component({
@@ -15,7 +16,8 @@ listaProdutos: Produtos[]
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutosService
+    private produtoService: ProdutosService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -32,7 +34,7 @@ this.produtoService.getByIdProdutos(id).subscribe((resp: Produtos)=>{
 }
 apagar(){
   this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-    alert('apagou saporraaaaaaa')
+  this.alertas.showAlertSucess('Produto apagado com sucesso!')
     this.router.navigate(['/produtos'])
   })
 

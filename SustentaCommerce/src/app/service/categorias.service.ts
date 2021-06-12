@@ -19,6 +19,8 @@ export class CategoriasService {
   getByIdCategorias(id: number): Observable<Categorias>{
     return this.http.get<Categorias>(`https://sustentacommerce.herokuapp.com/categorias/id/${id}`, this.token)
   }
+
+
   getByDepartamentoCategorias(departamentoProduto: string):Observable<Categorias[]>{
     return this.http.get<Categorias[]>(`https://sustentacommerce.herokuapp.com/categorias/departamento/${departamentoProduto}`, this.token)
 
@@ -32,4 +34,7 @@ export class CategoriasService {
   deleteCategoria(id: number){
     return this.http.delete(`https://sustentacommerce.herokuapp.com/categorias/id/${id}`, this.token)
   }
+
+
+
 }
