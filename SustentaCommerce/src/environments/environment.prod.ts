@@ -5,6 +5,6 @@ export const environment = {
   id: 0,
   email: '',
   usuarioVendedor: false,
-  usuarioAdmnistrador: false
+  usuarioAdministrador: false
 
 };

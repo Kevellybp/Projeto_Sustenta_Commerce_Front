@@ -20,6 +20,7 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
+import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OrderModule } from 'ngx-order-pipe';
     CategoriaDeleteComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
-    AlertasComponent
+    AlertasComponent,
+    VisualizarProdutoComponent
   ],
   imports: [
     BrowserModule,
