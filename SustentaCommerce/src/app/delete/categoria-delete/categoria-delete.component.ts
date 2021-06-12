@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 
 @Component({
@@ -16,7 +17,8 @@ idCategoria: number
   constructor(
     private categoriaService: CategoriasService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   
   ) { }
 
@@ -32,7 +34,7 @@ idCategoria: number
   }
   apagar(){
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-      alert('Categoria apagada com sucesso!')
+     this.alertas.showAlertSucess('Categoria apagada com sucesso!')
       this.router.navigate(['/categorias'])
     })
   }

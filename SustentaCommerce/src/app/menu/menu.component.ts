@@ -17,10 +17,15 @@ export class MenuComponent implements OnInit {
   listaCategorias: Categorias[]
   categoria: Categorias = new Categorias()
 
+
+
+
   constructor(
     private router: Router, 
     public authService: AuthService,
     private categoriaService: CategoriasService
+
+
     ){}
 
   ngOnInit() {

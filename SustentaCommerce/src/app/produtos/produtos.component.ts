@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
@@ -19,12 +20,16 @@ export class ProdutosComponent implements OnInit {
     listaCategorias: Categorias[]
     categoria: Categorias = new Categorias()
 
+    key = 'data'
+    reverse = true
+
     
 
   constructor(private router: Router,
     private produtosService: ProdutosService,
     public authService: AuthService,
-    private categoriaService: CategoriasService  
+    private categoriaService: CategoriasService,
+    private alertas: AlertasService
     ) { }
 
   ngOnInit() {
@@ -40,7 +45,7 @@ export class ProdutosComponent implements OnInit {
   cadastrarProduto(){
     this.produtosService.postProduto(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
-      alert('Muito bem! Produto cadastrado com sucesso!')
+     this.alertas.showAlertSucess('Muito bem! Produto cadastrado com sucesso!')
       this.findAllProdutos()
       this.produto = new Produtos()
     })

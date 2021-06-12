@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
 import { Produtos } from 'src/app/model/Produtos';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 
@@ -21,7 +22,8 @@ idCategoria: number
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    private categoriaService: CategoriasService
+    private categoriaService: CategoriasService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -51,7 +53,7 @@ atualizarProduto(){
 
   this.produtoService.putProduto(this.produto).subscribe((resp: Produtos)=>{
 this.produto = resp
-alert('editou saporra')
+this.alertas.showAlertInfo('Produto atualizado com sucesso!')
 this.router.navigate(['/produtos'])
   })
 }
