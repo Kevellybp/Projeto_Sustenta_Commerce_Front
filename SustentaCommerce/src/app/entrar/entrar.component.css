@@ -1,10 +1,10 @@
 .fundo {
-    background-color: rgb( 255, 255, 255);
+    background-color: rgb(255, 255, 255);
     height: 35vh;
 }
 
 .fundo1 {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     height: 25vh;
     width: 100vw;
     display: flex;
@@ -26,5 +26,5 @@
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150px;
+    height: 195px;
 }

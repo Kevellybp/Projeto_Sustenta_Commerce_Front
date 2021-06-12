@@ -75,5 +75,11 @@
 
 .ul-navbar-categorias .item-ul-navbar-categoria:hover {
     background-color: var(--background-green);
+    color: rgb(0, 0, 0);
+    font-family: American Typewriter, serif;
+}
+.l1{
+    color: rgb(0, 0, 0);
+    font-family: American Typewriter, serif;
 }
 
