@@ -40,14 +40,18 @@ export class AuthService {
   }
 
   vendedor() {
-    let usuarioVendedor: boolean = false
-
-    if(environment.usuarioVendedor == true) {
-      if(environment.usuarioAdministrador == false) {
-        usuarioVendedor = true
-      }
+    let ok: boolean = true
+    if(environment.usuarioVendedor != true) {
+      ok = false
     }
+    return ok
+  }
 
-    return usuarioVendedor
+  administrador() {
+    let ok: boolean = false
+    if(environment.usuarioVendedor != true) {
+      ok = true
+    }
+    return ok
   }
 }

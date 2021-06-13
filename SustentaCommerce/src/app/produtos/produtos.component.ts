@@ -56,7 +56,6 @@ export class ProdutosComponent implements OnInit {
     })
   }
   findAllCategorias(){
-    console.log(environment.token)
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
     })

@@ -29,7 +29,6 @@ this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   this.router.navigate(['/produtos'])
   
   
-  
 })
 }
 }

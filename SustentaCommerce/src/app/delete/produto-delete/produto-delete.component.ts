@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from 'src/app/model/Produtos';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-produto-delete',
@@ -22,6 +23,12 @@ listaProdutos: Produtos[]
   ) { }
 
   ngOnInit() {
+
+    if(environment.usuarioVendedor != true) {
+      alert('Você precisa ser vendedor para acessar essa rota!')
+      this.router.navigate(['/produtos'])
+    }
+
     window.scroll(0,0)
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProduto)
