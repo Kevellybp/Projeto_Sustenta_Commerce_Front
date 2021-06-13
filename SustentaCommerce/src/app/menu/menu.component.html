@@ -3,9 +3,9 @@
 <div class="d-flex flex-column">
     <nav class="navbar-expand-lg navbar d-flex justify-content-between flex-row flex-wrap align-items-center" style="background-color: var(--background-green)">
     
-        <div class="d-flex flex-row align-items-center"  style="flex: 1">        
+        <div class="d-flex flex-row align-items-center"  style="flex: 2">
             <a class="navbar-brand d-flex flex-row align-items-center" routerLink='/inicio'>
-                <img src="https://i.imgur.com/R0nHciz.png" alt="Foto do Blog" width="70px" height="70px" class="">
+                <img src="../../assets/logo-sustenta-transparente.png" alt="Logo Sustenta Commerce" width="70px" height="70px" class="">
                 <h4 class="m-0 p-2 fs"> Sustenta Commerce</h4>
             </a>    
         </div>
@@ -27,28 +27,41 @@
             </ul>
         </div>
         -->
-    
-    
-        <form class="form-inline d-flex  flex-row" style="flex: 3; min-width:350px">
-            <input class="form-control  inputpesquisa" style="width: 90%" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn" style="width: 10%" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
-        
-    
-        <div class="d-flex flex-row justify-content-end"  style="flex: 1">
-            <ul class="navbar-nav flex-row d-flex">
-                <i  class="fa fa-shopping-cart  ml-2"></i>
-                <li class="nav-item  ml-2"></li>
-                
-                <li *ngIf="authService.deslogado()" class="nav-item ml-2">
-                    <a class="pLogin" routerLink='/entrar'>Login</a>
-                </li>
-                
-                <li *ngIf="authService.logado()" class="nav-item  ml-2">
-                    <a class="btn btn-primary" (click)='sair()'>Sair</a>
-                </li>
-            </ul>
+
+        <div class="d-flex justify-content-end flex-row flex-wrap">
+            <form class="input-group flex-nowrap justify-content-flex-end  mt-3 mb-3 pl-4 pr-4" style="height:3rem; min-width:400px ;width:100%; flex: 1">
+                <input type="text" class="form-control m-0 pl-2 pr-2 p-0" placeholder="Pesquisar" style="height:3rem; border:none; border-radius: 0px">
+                <button class="input-group-prepend d-flex justify-content-center align-items-center m-0 p-0" style="height:3rem; width:3rem; background-color: white; border: none; ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search m-0 p-0" viewBox="0 0 16 16" style="opacity: 0.3">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+            </form>
+
+            <!--
+            <form class="form-inline d-flex  flex-row" style="flex: 3; min-width:350px">
+                <input class="form-control  inputpesquisa" style="width: 90%" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn" style="width: 10%" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+            -->
+
+            <div class="d-flex flex-row justify-content-end align-items-center  mt-3 mb-3 pl-4 pr-4"  style="flex: 1">
+
+                <ul class="navbar-nav flex-row d-flex">
+                    <i  class="fa fa-shopping-cart  ml-2"></i>
+                    <li class="nav-item  ml-2"></li>
+
+                    <li *ngIf="authService.deslogado()" class="nav-item ml-2">
+                        <a class="pLogin" routerLink='/entrar'>Login</a>
+                    </li>
+
+                    <li *ngIf="authService.logado()" class="nav-item  ml-2">
+                        <a class="btn btn-primary" (click)='sair()'>Sair</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </nav>
     
     <nav class="navbar navbar-expand-lg p-0 m-0 " style="background-color: var(--logo-green); height: 3rem;">
