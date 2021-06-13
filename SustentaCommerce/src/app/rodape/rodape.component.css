@@ -1,9 +1,10 @@
-.estiloEscrita{
+.estiloEscrita {
     font-size: 15pt;
     color: black;
     font-family: American Typewriter, serif;
 }
-.fundoRoda{
-    background-color: #d4e0bb;
-   border-color: transparent;
+
+.fundoRoda {
+    background-color: #4a8d5a;
+    border-color: transparent;
 } 

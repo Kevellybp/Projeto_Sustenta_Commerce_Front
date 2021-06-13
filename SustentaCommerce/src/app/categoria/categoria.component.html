@@ -1,16 +1,8 @@
 <app-menu></app-menu>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <!-- Botão para acionar modal -->
-
-<body style="background-color: #d4e0bb;">
-
+<body style="background-color: #d4e0bb; min-height: 100vh">
+    
     <h1 class="text-center mb-5">Categorias</h1>
-
     <div class="container">
         <div *ngIf="authService.vendedor()" class="d-flex justify-content-center">
             <p>Deseja cadastrar uma nova categoria?</p>
@@ -18,15 +10,12 @@
                 Cadastrar
             </button>
         </div>
-
         <div *ngIf="authService.deslogado()" class="d-flex justify-content-center">
             <p>Você precisa fazer o login para cadastrar uma nova categoria!</p>
             <button type="button" class="btn btn-primary d-flex justify-content-center ml-3 d-flex justify-content-center" routerLink='/entrar'>
                     Logar
                 </button>
         </div>
-
-
     </div>
 
     <!-- Modal -->
