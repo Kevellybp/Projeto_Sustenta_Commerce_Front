@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -15,11 +17,18 @@ categoria: Categorias = new Categorias()
   constructor(
     private categoriaService: CategoriasService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
     
   ) { }
 
   ngOnInit() {
+
+    if(environment.usuarioVendedor != true) {
+      alert('Você precisa ser vendedor para acessar essa rota!')
+      this.router.navigate(['/categorias'])
+    }
+
     let id = this.route.snapshot.params['id']
     this.findByIdCategoria(id)
 
@@ -35,7 +44,7 @@ categoria: Categorias = new Categorias()
   atualizarCategoria(){
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categorias)=>{
       this.categoria = resp
-      alert('Categoria atualizada com sucesso!')
+     this.alertas.showAlertSucess('Categoria atualizada com sucesso!')
       this.router.navigate(['/categorias'])
     })
   }

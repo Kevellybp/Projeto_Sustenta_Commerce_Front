@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
 import { Produtos } from 'src/app/model/Produtos';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-produto-edit',
@@ -21,10 +23,17 @@ idCategoria: number
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    private categoriaService: CategoriasService
+    private categoriaService: CategoriasService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
+
+    if(environment.usuarioVendedor != true) {
+      alert('Você precisa ser vendedor para acessar essa rota!')
+      this.router.navigate(['/produtos'])
+    }
+
     window.scroll(0,0)
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
@@ -51,7 +60,7 @@ atualizarProduto(){
 
   this.produtoService.putProduto(this.produto).subscribe((resp: Produtos)=>{
 this.produto = resp
-alert('editou saporra')
+this.alertas.showAlertInfo('Produto atualizado com sucesso!')
 this.router.navigate(['/produtos'])
   })
 }
