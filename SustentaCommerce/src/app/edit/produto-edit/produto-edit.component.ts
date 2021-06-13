@@ -5,6 +5,7 @@ import { Produtos } from 'src/app/model/Produtos';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-produto-edit',
@@ -27,6 +28,12 @@ idCategoria: number
   ) { }
 
   ngOnInit() {
+
+    if(environment.usuarioVendedor != true) {
+      alert('Você precisa ser vendedor para acessar essa rota!')
+      this.router.navigate(['/produtos'])
+    }
+
     window.scroll(0,0)
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
