@@ -6,3 +6,7 @@
     background-color: #dfdfdf;
     border-color: rgb(110, 110, 110);
 }
+.TodosCards{
+    border: crimson;
+    border-radius: 15px;
+}

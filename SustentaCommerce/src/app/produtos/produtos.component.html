@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 
-<body style="background-color: #d4e0bb;">
+<body style="background-color: #ffffff;">
     <!-- Botão para acionar modal -->
 
     <h1 class="text-center mb-5">Produtos</h1>
@@ -10,16 +10,14 @@
     <div class="container mb-5">
         <div *ngIf="authService.vendedor()" class="d-flex justify-content-center">
             <p>Deseja cadastrar um novo produto?</p>
-            <button type="button" class="btn btn-primary d-flex justify-content-center ml-3 d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
+           <a  type="button" class="d-flex justify-content-center ml-3 d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
             Cadastrar
-        </button>
+        </a>
         </div>
 
         <div *ngIf="authService.deslogado()" class="d-flex justify-content-center">
             <p>Você precisa fazer o login para cadastrar um novo produto!</p>
-            <button type="button" class="btn btn-primary d-flex justify-content-center ml-3 d-flex justify-content-center" routerLink='/entrar'>
-                Logar
-            </button>
+          
         </div>
     </div>
 
@@ -91,7 +89,7 @@
     </div>
 
 
-    <div class="row" style="background-color: #d4e0bb;">
+    <div class="row" style="background-color: #ffffff;">
         <!--div envolvendo todos os cards-->
         <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
 
@@ -100,11 +98,11 @@
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" alt="Imagem do produto" src="{{produto.foto}}">
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body text-center" >
                     <h4 class="nome">{{produto.nome}}</h4>
                     <small class="text-muted"></small>
                     <p id="preco">R$ {{produto.precoUnitario}}</p>
-                    <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
+                    <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
                     <!--<div class="row">
 
@@ -131,9 +129,6 @@
     </div>
 </body>
 <app-rodape></app-rodape>
-
-
-
 
 
 
