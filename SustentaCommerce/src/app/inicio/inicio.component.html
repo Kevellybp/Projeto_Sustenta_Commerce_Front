@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 
-<body style="background-color: #ffffff; min-height:100vh">
+<body style="background-color: #d7fcb68c; min-height:100vh">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -36,13 +36,13 @@
     </div>
 
 
-
-    <div class="row" style="background-color: #d4e0bb;">
+    <h1 class="mt-2 text-center">Nossos produtos:</h1>
+    <div class="row mt-3">
         <!--div envolvendo todos os cards-->
         <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
 
             <!--cada card com o produto-->
-            <div class="card" [routerLink]="['/produto', produto.id]">
+            <div class="card" style="background-color: #e0e0e069;" [routerLink]="['/produto', produto.id]">
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" alt="Imagem do produto" src="{{produto.foto}}">
                 </div>
