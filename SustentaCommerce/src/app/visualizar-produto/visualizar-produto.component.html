@@ -3,18 +3,56 @@
 <body style="background-color: #d4e0bb;">
     <div class="container mt-3 mb-5">
         <div class="d-flex justify-content-center">
-            <div class="col-md-12">
-                <h1 class="text-center">{{produto.nome}}</h1>
-            </div>
+            
         </div>
 
-        <div class="d-flex justify-content-center">
+        <div class="container d-flex justify-content-center">
             <img src={{produto.foto}}>
 
-            <div class="col-md-5" id="txt-grup">
+            <div 
+            class="col-md-12" 
+            style="margin-left:50px; font-size: 15pt; font-family: American Typewriter, serif;">
+                <h1>{{produto.nome}}</h1> 
+                
+                
+                <div class="dropdown">
+                    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Unidades
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">1 uni</a>
+                      <a class="dropdown-item" href="#">2 uni</a>
+                      <a class="dropdown-item" href="#">3 uni</a>
+                      <a class="dropdown-item" href="#">4 uni</a>
+                      <a class="dropdown-item" href="#">5 uni</a>
+                      <a class="dropdown-item" href="#">6 uni</a>
+                      <a class="dropdown-item" href="#">7 uni</a>
+
+                    </div>
+                  </div>
+
+
+            <div class="col-md-5" id="txt-grup" >
                 <h2>{{produto.usuario_produtos_criados}}</h2>
 
-                <h1 style="margin-left: 100px;" class="mb-3">R${{produto.precoUnitario}}</h1>
+                <h1 style=" font-size: 15pt; font-family: American Typewriter, serif;" class="mb-3">R${{produto.precoUnitario}},00</h1>
+
+                <div class="dropdown">
+                    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dividir pagamento
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">1x</a>
+                      <a class="dropdown-item" href="#">2x</a>
+                      <a class="dropdown-item" href="#">3x</a>
+                      <a class="dropdown-item" href="#">4x</a>
+                      <a class="dropdown-item" href="#">5x</a>
+                      <a class="dropdown-item" href="#">6x</a>
+                      <a class="dropdown-item" href="#">7x</a>
+
+                    </div>
+                  </div>
+
 
                 <div class="">
                     <div class="col-md-5">
@@ -32,10 +70,15 @@
                     </div>
                 </div>
 
+                <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um material</button>
+                
+                <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal">Adicionar ao carrinho</button>
+
                 <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
                 <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
-                <button type="button" class="btn btn-success mt-5" data-dismiss="modal">Adicionar ao carrinho</button>
+                
             </div>
+        </div>
         </div>
     </div>
 </body>
