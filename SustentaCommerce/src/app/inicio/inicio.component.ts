@@ -10,6 +10,7 @@ import { ProdutosService } from '../service/produtos.service';
 })
 export class InicioComponent implements OnInit {
 
+  
   produto: Produtos = new Produtos()
   listaProdutos: Produtos[]
 
@@ -21,6 +22,7 @@ export class InicioComponent implements OnInit {
     this.findAllProdutos()
   }
 
+  
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=>{
       this.listaProdutos = resp
