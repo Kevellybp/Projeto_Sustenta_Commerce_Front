@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
+import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
@@ -18,6 +19,10 @@ export class ProdutosComponent implements OnInit {
     idCategoria: number
     listaCategorias: Categorias[]
     categoria: Categorias = new Categorias()
+    user: Usuario = new Usuario()
+    idUser: number
+    nomeProduto: string
+    nomeCategoria: string
 
     key = 'data'
     reverse = true
@@ -60,5 +65,31 @@ export class ProdutosComponent implements OnInit {
       this.listaCategorias = resp
     })
   } 
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+      this.user = resp
+    })
+  }
+
+  findByNomeProduto(){
+    if(this.nomeProduto == ''){
+      this.findAllProdutos()
+    } else {
+      this.produtosService.getByNomeProdutos(this.nomeProduto).subscribe((resp: Produtos[]) => {
+        this.listaProdutos = resp
+      })
+    }
+  }
+
+  findByNomeCategoria(){
+    if(this.nomeCategoria == ''){
+      this.findAllCategorias()
+    } else {
+      this.categoriaService.getByDepartamentoCategorias(this.nomeCategoria).subscribe((resp: Categorias[]) => {
+        this.listaCategorias = resp
+      })
+    }
+  }
 
 }

@@ -20,6 +20,16 @@ export class AuthService {
     return this.http.post<Usuario>('https://sustentacommerce.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
+  getByIdUser(id: number):Observable<Usuario>{
+    return this.http.get<Usuario>(`https://sustentacommerce.herokuapp.com/usuarios/id/${id}`)
+
+  }
+
+  getBynome(nome: string):Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(`https://sustentacommerce.herokuapp.com/usuarios/nome/${nome}`)
+
+  }
+
   logado() {
     let ok: boolean = false
     if(environment.token != '') {
@@ -54,4 +64,5 @@ export class AuthService {
     }
     return ok
   }
+
 }
