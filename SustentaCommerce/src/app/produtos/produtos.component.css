@@ -11,3 +11,8 @@
     max-width: 196;
     max-height: 240;
 }
+.TodosCards{
+    border: crimson;
+    border-radius: 15px;
+}
+img{     max-width: 196px;     max-height: 240px;   }
