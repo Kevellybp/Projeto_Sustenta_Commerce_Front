@@ -6,8 +6,16 @@
     background-color: #dfdfdf;
     border-color: rgb(110, 110, 110);
 }
+<<<<<<< HEAD
 
 img{   
       max-width: 196px;   
         max-height: 240px;  
      }
+=======
+.TodosCards{
+    border: crimson;
+    border-radius: 15px;
+}
+img{     max-width: 196px;     max-height: 240px;   }
+>>>>>>> 133ddaf3d10fd1a5b30c986d65df146b8d7dcbc5
