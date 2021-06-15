@@ -7,3 +7,7 @@
     border-color: rgb(110, 110, 110);
 }
 
+img{   
+      max-width: 196px;   
+        max-height: 240px;  
+     }
