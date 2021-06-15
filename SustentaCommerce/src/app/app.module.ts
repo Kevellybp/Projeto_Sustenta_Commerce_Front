@@ -21,6 +21,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
+import { ProdutosPesquisaComponent } from './produtos_pesquisa/produtosPesquisa.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     AlertasComponent,
-    VisualizarProdutoComponent
+    VisualizarProdutoComponent,
+    ProdutosPesquisaComponent
   ],
   imports: [
     BrowserModule,

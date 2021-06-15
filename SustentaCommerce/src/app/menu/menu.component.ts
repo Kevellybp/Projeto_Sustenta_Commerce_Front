@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
+import { Produtos } from '../model/Produtos';
 import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
+import { ProdutosService } from '../service/produtos.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,10 +14,13 @@ import { CategoriasService } from '../service/categorias.service';
 })
 export class MenuComponent implements OnInit {
 
+  pesquisaParam = ""
   nome = environment.nome
   idCategoria: number
   listaCategorias: Categorias[]
+  listaProdutos: Produtos[]
   categoria: Categorias = new Categorias()
+  produtos: Produtos = new Produtos()
 
 
 
@@ -23,7 +28,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router, 
     public authService: AuthService,
-    private categoriaService: CategoriasService
+    private categoriaService: CategoriasService,
+    private produtosService: ProdutosService
 
 
     ){}
@@ -51,6 +57,16 @@ export class MenuComponent implements OnInit {
   getAllCategorias(){
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
+    })
+  }
+
+  onChangePesquisaProduto(event: any) {
+    this.pesquisaParam = event.target.value
+  }
+  getProdutosFullText(){
+    this.produtosService.getProdutosByFullText(this.pesquisaParam).subscribe((resp: Produtos[]) => {
+      this.listaProdutos = resp
+      this.router.navigate(['/produtos/pesquisar-produto'])
     })
   }
 
