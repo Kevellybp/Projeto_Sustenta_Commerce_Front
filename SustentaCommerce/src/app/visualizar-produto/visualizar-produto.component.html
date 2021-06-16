@@ -1,15 +1,14 @@
 <app-menu></app-menu>
 
+<!---
 
-
-<body style="background-color: #ffffff;">
-    <div class="container mt-3 mb-5">
+<body style="background-color: #ffffff;" >
+    <div class="container mt-3 mb-5" >
       
-        <div class="container d-flex justify-content-center ">
+        <div class="container d-flex justify-content-center " >
             <img src={{produto.foto}}>
 
-            <div 
-            class="col-md-12" 
+            <div  class="col-md-12" 
             style="margin-left:50px; font-size: 15pt; font-family: American Typewriter, serif;">
                 <h1>{{produto.nome}}</h1> 
                 
@@ -19,68 +18,121 @@
                       Unidades
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">1 uni</a>
-                      <a class="dropdown-item" href="#">2 uni</a>
-                      <a class="dropdown-item" href="#">3 uni</a>
-                      <a class="dropdown-item" href="#">4 uni</a>
-                      <a class="dropdown-item" href="#">5 uni</a>
-                      <a class="dropdown-item" href="#">6 uni</a>
-                      <a class="dropdown-item" href="#">7 uni</a>
+                        <a class="dropdown-item" href="#">1 uni</a>
+                        <a class="dropdown-item" href="#">2 uni</a>
+                        <a class="dropdown-item" href="#">3 uni</a>
+                        <a class="dropdown-item" href="#">4 uni</a>
+                        <a class="dropdown-item" href="#">5 uni</a>
+                        <a class="dropdown-item" href="#">6 uni</a>
+                        <a class="dropdown-item" href="#">7 uni</a>
 
-                    </div>
-                  </div>
-
-
-            <div class="col-md-5" id="txt-grup" >
-                <h2>{{produto.usuario_produtos_criados}}</h2>
-
-                <h1 style=" font-size: 15pt; font-family: American Typewriter, serif;" class="mb-3">R${{produto.precoUnitario}},00</h1>
-
-                <div class="dropdown">
-                    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dividir pagamento
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">1x</a>
-                      <a class="dropdown-item" href="#">2x</a>
-                      <a class="dropdown-item" href="#">3x</a>
-                      <a class="dropdown-item" href="#">4x</a>
-                      <a class="dropdown-item" href="#">5x</a>
-                      <a class="dropdown-item" href="#">6x</a>
-                      <a class="dropdown-item" href="#">7x</a>
-
-                    </div>
-                  </div>
-
-
-                <div class="">
-                    <div class="col-md-5">
-                        <p>Descrição:</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>{{produto.descricao}}</p>
-                    </div>
-
-                    <div class="col-md-5 mt-4">
-                        <p>Quantidade:</p>
-                    </div>
-                    <div class="col-md-1">
-                        <p>{{produto.quantidade}}</p>
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um material</button>
-                
-                <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal">Adicionar ao carrinho</button>
 
-                <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
-                <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
-                
+                <div class="col-md-5" id="txt-grup">
+                    <h2>{{produto.usuario_produtos_criados}}</h2>
+
+                    <h1 style=" font-size: 15pt; font-family: American Typewriter, serif;" class="mb-3">R${{produto.precoUnitario}},00</h1>
+
+                    <div class="dropdown">
+                        <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dividir pagamento
+                    </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">1x</a>
+                            <a class="dropdown-item" href="#">2x</a>
+                            <a class="dropdown-item" href="#">3x</a>
+                            <a class="dropdown-item" href="#">4x</a>
+                            <a class="dropdown-item" href="#">5x</a>
+                            <a class="dropdown-item" href="#">6x</a>
+                            <a class="dropdown-item" href="#">7x</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="">
+                        <div class="col-md-5">
+                            <p>Descrição:</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{produto.descricao}}</p>
+                        </div>
+
+                        <div class="col-md-5 mt-4">
+                            <p>Quantidade:</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>{{produto.quantidade}}</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um material</button>
+
+                    <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)="addToCart()">Adicionar ao carrinho</button>
+
+                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
+
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </body>
+
+-->
+
+<!--Div do card completo-->
+
+
+
+
+
+<div class="container justify-content-center" style=" margin-top: 15px; margin-bottom: 20px; margin-left: 400px; ">
+    <img src={{produto.foto}} alt="Imagem de capa do card">
+
+    <div class="container; aoLado" style="margin-left: 10px;">
+        <a style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</a>
+
+        <p style="margin-top: 5px;">R${{produto.precoUnitario}},00</p>
+        <p style="margin-top: 5px;">12x <a href="" style="color: green;">Sem juros</a></p>
+
+
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle" type="button;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-family: American Typewriter, serif; border-color: crimson; margin-top: 10px;">
+        Formas de pagamento
+      </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item"> <i class="fa fa-credit-card"></i></a>
+                <a class="dropdown-item"> <i class="fa fa-cc-paypal"></i></a>
+                <a class="dropdown-item"> <i class="fa fa-bitcoin"></i></a>
+            </div>
+        </div>
+
+
+        <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 5px;">
+      Descrição do produto</strong>
+        <p style="font-size: 15px; font-family: American Typewriter, serif;">{{produto.descricao}}</p>
+    </div>
+    <div>
+        <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 2px;">
+    Conheça nosso(a) vendedor(a)</strong>
+        <p style="font-size: 15px; font-family: American Typewriter, serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis dolor ut voluptas totam quos expedita magnam saepe facilis ab officiis dolores accusamus, molestiae impedit necessitatibus, cum iste repudiandae sit?</p>
+    </div>
+    <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um material</button>
+
+    <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)='addToCart()'>Adicionar ao carrinho</button>
+
+    <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+    <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
+
+
+
+
+</div>
+
+
 
 
 <app-rodape></app-rodape>

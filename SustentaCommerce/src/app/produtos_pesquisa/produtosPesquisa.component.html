@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+
+
+<div class="row" style="background-color: #d4e0bb;">
+    <!--div envolvendo todos os cards-->
+    <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
+
+        <!--cada card com o produto-->
+        <div class="card" [routerLink]="['/produto', produto.id]">
+
+            <div class="card-body text-center">
+                <h4 class="nome">{{produto.nome}}</h4>
+                <small class="text-muted"></small>
+                <p id="preco">R$ {{produto.precoUnitario}}</p>
+            
+
+            </div>
+        </div>
+
+    </div>
+</div>

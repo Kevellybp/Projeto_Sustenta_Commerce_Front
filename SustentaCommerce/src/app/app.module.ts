@@ -21,7 +21,9 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
+import { ProdutosPesquisaComponent } from './produtos_pesquisa/produtosPesquisa.component';
 import { DoarMaterialComponent } from './doar-material/doar-material.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { DoarMaterialComponent } from './doar-material/doar-material.component';
     ProdutoDeleteComponent,
     AlertasComponent,
     VisualizarProdutoComponent,
+    ProdutosPesquisaComponent,
     DoarMaterialComponent
   ],
   imports: [

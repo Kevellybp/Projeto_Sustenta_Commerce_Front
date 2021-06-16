@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { AuthService } from '../service/auth.service';
-import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
 @Component({
@@ -14,18 +12,23 @@ import { ProdutosService } from '../service/produtos.service';
 export class VisualizarProdutoComponent implements OnInit {
 
   produto: Produtos = new Produtos()
-  
+  carrinho: Produtos[]
+  quantidade: number
+  valor: number
 
   constructor(
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
     ) { }
 
   ngOnInit() {
     window.scroll(0,0)
     let id = this.route.snapshot.params['id']
     this.findProdutoById(id)
+    this.quantidade = 1
+    this.valor = this.produto.precoUnitario
   }
 
 
@@ -33,5 +36,24 @@ export class VisualizarProdutoComponent implements OnInit {
     this.produtoService.getByIdProdutos(id).subscribe((resp: Produtos) => {
       this.produto = resp
     })
+  }
+
+  addToCart() {
+    this.carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]')
+
+    this.carrinho.push(
+      {
+        id: this.produto.id,
+        nome: this.produto.nome,
+        descricao: this.produto.descricao,
+        foto: this.produto.foto,
+        quantidade: this.produto.quantidade,
+        precoUnitario: this.produto.precoUnitario,
+        categoria_produtos_criados: this.produto.categoria_produtos_criados,
+        usuario_produtos_criados: this.produto.usuario_produtos_criados
+      })
+    localStorage.setItem('carrinho', JSON.stringify(this.carrinho))
+    alert('Produto adicionado ao carrinho')
+    this.router.navigate(['/inicio'])
   }
 }
