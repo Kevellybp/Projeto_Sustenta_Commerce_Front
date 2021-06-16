@@ -3,7 +3,8 @@
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
-.fs{
+
+.fs {
     color: black;
     font-family: American Typewriter, serif;
 }
@@ -45,7 +46,6 @@
     justify-content: center;
     border-color: #6e6d6d;
     border-width: 2px;
-
 }
 
 .btnCategoria {
@@ -67,7 +67,6 @@
     font-family: American Typewriter, serif;
 }
 
-
 .h4 {
     font-size: 15pt;
     font-family: American Typewriter, serif;
@@ -84,8 +83,12 @@
     font-family: American Typewriter, serif;
     font-size: 20pt;
 }
-.l1{
+
+.l1 {
     color: rgb(0, 0, 0);
     font-family: American Typewriter, serif;
 }
 
+i:hover {
+    color: rgba(124, 124, 124, 0.5);
+}
