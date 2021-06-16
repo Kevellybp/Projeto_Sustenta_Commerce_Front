@@ -7,7 +7,7 @@ export class Produtos{
     public descricao: string
     public precoUnitario: number
     public foto: string
-    public quantidade: string
+    public quantidade: number
     public categoria_produtos_criados: Categorias
     public usuario_produtos_criados: Usuario
 }

@@ -17,6 +17,7 @@ userLogin: UserLogin = new UserLogin
 
   ngOnInit() {
     window.scroll(0,0)
+    localStorage.clear()
   }
 entrar() {
 this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
