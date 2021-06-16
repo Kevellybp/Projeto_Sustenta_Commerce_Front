@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produtos';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -19,13 +20,14 @@ export class CarrinhoComponent implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
     if (environment.token == "") {
-      alert('Você deve fazer o login para acessr o carrinho')
+    this.alertas.showAlertInfo('Você deve fazer o login para acessar o carrinho')
       this.router.navigate(["/entrar"])
     }
 
