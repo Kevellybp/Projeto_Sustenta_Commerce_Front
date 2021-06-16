@@ -6,6 +6,11 @@
     background-color: #dfdfdf;
     border-color: rgb(110, 110, 110);
 }
+
+.img{
+    max-width: 196;
+    max-height: 240;
+}
 .TodosCards{
     border: crimson;
     border-radius: 15px;

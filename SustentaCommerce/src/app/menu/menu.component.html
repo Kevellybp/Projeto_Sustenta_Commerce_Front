@@ -30,8 +30,8 @@
 
         <div class="d-flex justify-content-end flex-row flex-wrap">
             <form class="input-group flex-nowrap justify-content-flex-end  mt-3 mb-3 pl-4 pr-4" style="height:3rem; min-width:400px ;width:100%; flex: 1">
-                <input type="text" class="form-control m-0 pl-2 pr-2 p-0" placeholder="Pesquisar" style="height:3rem; border:none; border-radius: 0px">
-                <button class="input-group-prepend d-flex justify-content-center align-items-center m-0 p-0" style="height:3rem; width:3rem; background-color: white; border: none; ">
+                <input (change)='onChangePesquisaProduto($event)' type="text" class="form-control m-0 pl-2 pr-2 p-0" placeholder="Pesquisar" style="height:3rem; border:none; border-radius: 0px">
+                <button  type="submit" (click)='getProdutosFullText()' class="input-group-prepend d-flex justify-content-center align-items-center m-0 p-0" style="height:3rem; width:3rem; background-color: white; border: none; ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search m-0 p-0" viewBox="0 0 16 16" style="opacity: 0.3">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>

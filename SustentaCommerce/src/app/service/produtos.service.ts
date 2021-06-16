@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -22,6 +22,9 @@ export class ProdutosService {
   }
   getByNomeProdutos(nome: string): Observable<Produtos[]>{
     return this.http.get<Produtos[]>(`https://sustentacommerce.herokuapp.com/produtos/nome/${nome}`, this.token)
+  }
+  getProdutosByFullText(nome: string): Observable<Produtos[]>{
+    return this.http.get<Produtos[]>(`http://localhost:8080/produtos/pesquisar-produto`, {headers: new HttpHeaders().set('Authorization', environment.token), params: new HttpParams().set("nome", nome)})
   }
   getByPrecoUnitarioProdutos(precoUnitario: number): Observable<Produtos[]>{
     return this.http.get<Produtos[]>(`https://sustentacommerce.herokuapp.com/produtos/precoUnitario/${precoUnitario}`, this.token)
