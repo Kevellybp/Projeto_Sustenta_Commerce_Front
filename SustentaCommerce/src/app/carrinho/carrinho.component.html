@@ -8,18 +8,20 @@
             <div class="col-md-2"> <img width="75px" height="75px" src={{i.foto}} alt=""></div>
             <div class="col-md-3">
                 <p id="nome">{{i.nome}}</p>
-                <p id="preco">R$ {{i.precoUnitario}}</p>
+                <p id="preco">R$ {{i.precoUnitario.toFixed(2).replace('.', ',')}}</p>
             </div>
+
 
         </div>
     </div>
 
     <div class="confirma">
         <hr>
-        <h3 id="total"><strong>Valor a ser pago:</strong> R$ {{precoTotal}} </h3>
+        <h3 id="total"><strong>Valor a ser pago:</strong> R$ {{precoTotal.toFixed(2).replace('.', ',')}} </h3>
         <div class="d-flex justify-content-center">
-            <button type="submit" id="continuar" class="btn mr-3" routerLink="/inicio"><strong>Continuar
+            <button type="submit" id="continuar" class="btn mr-3" routerLink="/incio"><strong>Continuar
             comprando</strong></button>
             <button type="submit" id="comprar" class="btn"><strong>Comprar</strong></button>
         </div>
     </div>
+</div>
