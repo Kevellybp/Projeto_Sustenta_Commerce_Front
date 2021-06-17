@@ -24,6 +24,14 @@ export class ProdutosComponent implements OnInit {
     nomeProduto: string
     nomeCategoria: string
 
+
+
+    categoriaEscolhida: Categorias = new Categorias()  
+    idCategoriaEscolhida: number
+    departamentoProdutoCategoriaEscolhida: string
+  
+  
+
     key = 'data'
     reverse = true
 
@@ -47,19 +55,31 @@ export class ProdutosComponent implements OnInit {
     })
   }
   cadastrarProduto(){
+    
+    this.produto.categoria_produtos_criados = this.categoria
+    this.produto.categoria_produtos_criados.id = this.idCategoriaEscolhida;
+    this.produto.categoria_produtos_criados.departamentoProduto = this.departamentoProdutoCategoriaEscolhida;
+    
     this.produtosService.postProduto(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
-     this.alertas.showAlertSucess('Muito bem! Produto cadastrado com sucesso!')
+      this.alertas.showAlertSucess('Muito bem! Produto cadastrado com sucesso!')
       this.findAllProdutos()
       this.produto = new Produtos()
     })
   }
+
   
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategorias(this.idCategoria).subscribe((resp: Categorias) =>{
-      this.categoria = resp
-    })
+  findByIdCategoria(evt: any){
+
+    this.idCategoriaEscolhida = evt.target.value;
+    this.categoriaService.getByIdCategorias(this.idCategoriaEscolhida).subscribe((resp: Categorias)=>{
+      this.categoriaEscolhida = resp
+      this.departamentoProdutoCategoriaEscolhida = resp.departamentoProduto
+    });
+
   }
+
+
   findAllCategorias(){
     this.categoriaService.getAllCategorias().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp

@@ -72,16 +72,17 @@
     font-family: American Typewriter, serif;
 }
 .ul-navbar-categorias .item-ul-navbar-categoria{
-    font-size: 18pt;
+    font-size: 15pt;
     font-family: American Typewriter, serif;
+    
     
 }
 
 .ul-navbar-categorias .item-ul-navbar-categoria:hover {
     background-color: var(--background-green);
-    color: rgb(0, 0, 0);
+    color:var(--logo-green);
     font-family: American Typewriter, serif;
-    font-size: 20pt;
+    font-size: 17pt;
 }
 
 .l1 {

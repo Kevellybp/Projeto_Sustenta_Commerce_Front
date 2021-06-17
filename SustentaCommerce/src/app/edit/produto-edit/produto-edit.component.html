@@ -35,11 +35,11 @@
 
             <div class="form-group">
                 <label for="departamentoProduto">Departamento</label>
-                <select [(ngModel)]='idCategoria' (change)='findByIdCategoria()' name="tema" id="categorias" class="form-control">
-            <option *ngFor='let item of listaCategorias' value="{{item.id}}">
-                {{item.departamentoProduto}}
-            </option>
-        </select>
+                <select [(ngModel)]='idCategoria' (change)='findByIdCategoria($event)' name="tema" id="categorias" class="form-control">
+                    <option *ngFor='let item of listaCategorias' value="{{item.id}}">
+                        {{item.departamentoProduto}}
+                    </option>
+                </select>
             </div>
 
 
