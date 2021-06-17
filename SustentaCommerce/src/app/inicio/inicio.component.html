@@ -50,7 +50,7 @@
                 <div class="card-body text-center" style="font-family: American Typewriter, serif;" >
                     <h4 class="nome">{{produto.nome}}</h4>
                     <small class="text-muted"></small>
-                    <p id="preco">R$ {{produto.precoUnitario}}</p>
+                    <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
                     <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
                     <!--<div class="row">
