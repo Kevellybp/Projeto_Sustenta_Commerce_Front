@@ -71,8 +71,9 @@
                         <label for="texto">Escolha uma categoria <a data-dismiss="modal" routerLink='/categorias'> ou
                             cadastre uma nova</a>:
                     </label>
+                      
                         <select [(ngModel)]='idCategoria' (change)='findByIdCategoria($event)' name="tema" id="categorias" class="form-control">
-                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">
+                        <option *ngFor='let item of listaCategorias | orderBy : key : reverse' value="{{item.id}}">
                             {{item.departamentoProduto}}
                         </option>
                     </select>
@@ -91,7 +92,7 @@
 
     <div class="row" style="background-color: #ffffff;">
         <!--div envolvendo todos os cards-->
-        <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
+        <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos | orderBy : key : reverse'>
 
             <!--cada card com o produto-->
             <div class="card" [routerLink]="['/produto', produto.id]">
@@ -144,7 +145,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
-                <div *ngFor='let item of listaProdutos'>
+                <div *ngFor='let item of listaProdutos | orderBy : key : reverse'>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">

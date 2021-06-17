@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from '../model/Produtos';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutosService } from '../service/produtos.service';
 
@@ -20,7 +21,8 @@ export class VisualizarProdutoComponent implements OnInit {
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
     ) { }
 
   ngOnInit() {
@@ -53,7 +55,7 @@ export class VisualizarProdutoComponent implements OnInit {
         usuario_produtos_criados: this.produto.usuario_produtos_criados
       })
     localStorage.setItem('carrinho', JSON.stringify(this.carrinho))
-    alert('Produto adicionado ao carrinho')
+   this.alertas.showAlertSucess('Produto adicionado ao carrinho')
     this.router.navigate(['/inicio'])
   }
 }

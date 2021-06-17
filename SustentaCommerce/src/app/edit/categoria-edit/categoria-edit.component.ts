@@ -25,7 +25,7 @@ categoria: Categorias = new Categorias()
   ngOnInit() {
 
     if(environment.usuarioVendedor != true) {
-      alert('Você precisa ser vendedor para acessar essa rota!')
+     this.alertas.showAlertInfo('Você precisa ser vendedor para acessar essa rota!')
       this.router.navigate(['/categorias'])
     }
 
