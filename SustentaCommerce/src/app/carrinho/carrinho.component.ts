@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produtos';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -11,27 +12,30 @@ import { Produtos } from '../model/Produtos';
 export class CarrinhoComponent implements OnInit {
   produto: Produtos = new Produtos()
   carrinho: Produtos[]
+  precoParcial: number
   precoTotal: number
-  quantidade = 1
-  carrinhoValor = {
+  quantidade: number
+  valorCarrinho = {
     valor: 0
   }
 
   constructor(
-    private router: Router
-    ) { }
+    private router: Router,
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit() {
-    if (environment.token == '') {
-      alert('Você precisa fazer login para acessar o carrinho')
-      this.router.navigate(['/entrar'])
-    }
     window.scroll(0,0)
-    this.comprasNoCarrinho()
-    this.total()
+    if (environment.token == "") {
+    this.alertas.showAlertInfo('Você deve fazer o login para acessar o carrinho')
+      this.router.navigate(["/entrar"])
+    }
+
+    this.exibirCarrinho()
+    this.totalPagar()
   }
 
-  comprasNoCarrinho() {
+  exibirCarrinho() {
     const localS = localStorage['carrinho']
     if (localS.length > 0) {
       this.carrinho = localS ? JSON.parse(localS) : []
@@ -40,19 +44,19 @@ export class CarrinhoComponent implements OnInit {
     }
   }
 
-
-
-  total() {
+  totalPagar() {
     this.precoTotal = 0
-    let dadosProd = []
-    dadosProd = JSON.parse(localStorage.getItem('carrinho') || '{}')
-    dadosProd.forEach((i: any) => {
-      this.precoTotal += this.carrinhoValor.valor
+    let dadosProduto = []
+    dadosProduto = JSON.parse(localStorage.getItem('carrinho') || '{}')
+    dadosProduto.forEach((i: any) => {
+      this.valorCarrinho = {
+        valor: i.valorParcial
+      }
+
+
+      this.precoTotal += this.valorCarrinho.valor
     })
-    return this.precoTotal
+    return this.precoTotal.toFixed(2)
   }
-
-  
-
   
 }

@@ -24,6 +24,7 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
 import { ProdutosPesquisaComponent } from './produtos_pesquisa/produtosPesquisa.component';
 import { DoarMaterialComponent } from './doar-material/doar-material.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -43,10 +44,12 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     AlertasComponent,
     VisualizarProdutoComponent,
     ProdutosPesquisaComponent,
-    DoarMaterialComponent
+    DoarMaterialComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

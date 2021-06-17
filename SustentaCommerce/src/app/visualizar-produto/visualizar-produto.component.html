@@ -1,174 +1,78 @@
 <app-menu></app-menu>
 
-<!---
-
-<body style="background-color: #ffffff;" >
-    <div class="container mt-3 mb-5" >
-      
-        <div class="container d-flex justify-content-center " >
-            <img src={{produto.foto}}>
-
-            <div  class="col-md-12" 
-            style="margin-left:50px; font-size: 15pt; font-family: American Typewriter, serif;">
-                <h1>{{produto.nome}}</h1> 
-                
-                
-                <div class="dropdown">
-                    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Unidades
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">1 uni</a>
-                        <a class="dropdown-item" href="#">2 uni</a>
-                        <a class="dropdown-item" href="#">3 uni</a>
-                        <a class="dropdown-item" href="#">4 uni</a>
-                        <a class="dropdown-item" href="#">5 uni</a>
-                        <a class="dropdown-item" href="#">6 uni</a>
-                        <a class="dropdown-item" href="#">7 uni</a>
-
-                    </div>
-                </div>
-
-
-                <div class="col-md-5" id="txt-grup">
-                    <h2>{{produto.usuario_produtos_criados}}</h2>
-
-                    <h1 style=" font-size: 15pt; font-family: American Typewriter, serif;" class="mb-3">R${{produto.precoUnitario}},00</h1>
-
-                    <div class="dropdown">
-                        <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dividir pagamento
-                    </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">1x</a>
-                            <a class="dropdown-item" href="#">2x</a>
-                            <a class="dropdown-item" href="#">3x</a>
-                            <a class="dropdown-item" href="#">4x</a>
-                            <a class="dropdown-item" href="#">5x</a>
-                            <a class="dropdown-item" href="#">6x</a>
-                            <a class="dropdown-item" href="#">7x</a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="">
-                        <div class="col-md-5">
-                            <p>Descrição:</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{produto.descricao}}</p>
-                        </div>
-
-                        <div class="col-md-5 mt-4">
-                            <p>Quantidade:</p>
-                        </div>
-                        <div class="col-md-1">
-                            <p>{{produto.quantidade}}</p>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um material</button>
-
-                    <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)="addToCart()">Adicionar ao carrinho</button>
-
-                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
-                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
--->
-
-<!--Div do card completo-->
-
-
 <div class="container justify-content-center mb-3">
 
-  <div class="col-md-12 mt-3 mb-3">
+    <div class="col-md-12 mt-3 mb-3">
 
-    <div class="row mb-3">
-      <div class="col-md-6 d-flex justify-content-end align-items-end">
+        <div class="row mb-3">
+            <div class="col-md-6 d-flex justify-content-end align-items-end">
 
-        <img src={{produto.foto}} alt="Imagem de capa do card">
-
-      </div>
-
-      <div class="col-md-6">
-
-        <div class="container; aoLado" style="margin-left: 10px;">
-          <a style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</a>
-
-          <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle" type="button;" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              style="font-size: 15px; font-family: American Typewriter, serif; margin-top: 10px;">
-              Unidades
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item">1</a>
-              <a class="dropdown-item">2</a>
-              <a class="dropdown-item">3</a>
-              <a class="dropdown-item">4</a>
-           
+                <img src={{produto.foto}} alt="Imagem de capa do card">
 
             </div>
-          </div>
 
-          <p style="margin-top: 5px;">R${{produto.precoUnitario}},00</p>
-          <p style="margin-top: 5px;">12x <a href="" style="color: green;">Sem juros</a></p>
+            <div class="col-md-6">
+
+                <div class="container; aoLado" style="margin-left: 10px;">
+                    <a style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</a>
+
+                    <div class="dropdown">
+                        <button class="btn btn-transparent dropdown-toggle" type="button;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-family: American Typewriter, serif; margin-top: 10px;">
+              Unidades
+            </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">1</a>
+                            <a class="dropdown-item">2</a>
+                            <a class="dropdown-item">3</a>
+                            <a class="dropdown-item">4</a>
 
 
-          <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle" type="button;" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              style="font-size: 15px; font-family: American Typewriter, serif; margin-top: 10px;">
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 5px;">R${{produto.precoUnitario.toFixed(2).replace('.', ',')}},00</p>
+                    <p style="margin-top: 5px;">12x <a href="" style="color: green;">Sem juros</a></p>
+
+
+                    <div class="dropdown">
+                        <button class="btn btn-transparent dropdown-toggle" type="button;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-family: American Typewriter, serif; margin-top: 10px;">
               Formas de pagamento
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item"> <i class="fa fa-credit-card"></i></a>
-              <a class="dropdown-item"> <i class="fa fa-cc-paypal"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item"> <i class="fa fa-credit-card"></i></a>
+                            <a class="dropdown-item"> <i class="fa fa-cc-paypal"></i></a>
                         </div>
-          </div>
+                    </div>
 
 
-          <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 5px;">
+                    <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 5px;">
             Descrição do produto</strong>
-          <p style="font-size: 15px; font-family: American Typewriter, serif;">{{produto.descricao}}</p>
+                    <p style="font-size: 15px; font-family: American Typewriter, serif;">{{produto.descricao}}</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
 
-    <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center">
 
-      <div class="col-md-6">
-        <h3>
-          <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 2px; margin-left: 3px;">
+            <div class="col-md-6">
+                <h3>
+                    <strong style="font-size: 20px; font-family: American Typewriter, serif; margin-top: 2px; margin-left: 3px;">
             Conheça nosso(a) vendedor(a)</strong>
-        </h3>
+                </h3>
 
-        <p class="text-justify" style="font-size: 15px; font-family: American Typewriter, serif; margin-left: 3px">Lorem
-          ipsum dolor sit amet
-          consectetur adipisicing elit. Illum corporis dolor ut voluptas totam quos expedita magnam saepe facilis ab
-          officiis dolores accusamus, molestiae impedit necessitatibus, cum iste repudiandae sit?</p>
+                <p class="text-justify" style="font-size: 15px; font-family: American Typewriter, serif; margin-left: 3px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis dolor ut voluptas totam quos expedita magnam saepe facilis ab officiis dolores accusamus, molestiae impedit necessitatibus, cum iste repudiandae sit?</p>
 
-        <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um
+                <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um
           material</button>
 
-        <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal"
-          (click)='addToCart()'>Adicionar ao
+                <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)='addToCart()'>Adicionar ao
           carrinho</button>
 
-        <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal"
-          [routerLink]="['/produto-edit', produto.id]">Editar</button>
-        <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal"
-          [routerLink]="['/produto-delete', produto.id]">Apagar</button>
-      </div>
+                <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+                <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <app-rodape></app-rodape>
