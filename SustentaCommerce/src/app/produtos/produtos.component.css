@@ -7,11 +7,13 @@
     border-color: rgb(110, 110, 110);
 }
 
-.img{
-    max-width: 196;
-    max-height: 240;
+img{
+    max-width: 175px;
+    max-height: 175px;
+    margin-top: 5px;
 }
 .TodosCards{
     border: crimson;
     border-radius: 15px;
 }
+
