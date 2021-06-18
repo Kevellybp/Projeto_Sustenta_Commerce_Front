@@ -23,6 +23,7 @@ entrar() {
 this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   this.userLogin = resp
   environment.token = this.userLogin.token
+  environment.id = this.userLogin.id
   environment.nome = this.userLogin.nome
   environment.email = this.userLogin.usuario
   environment.usuarioVendedor = this.userLogin.usuarioVendedor

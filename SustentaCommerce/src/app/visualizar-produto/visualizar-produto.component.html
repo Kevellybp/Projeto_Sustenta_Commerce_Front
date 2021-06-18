@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <p style="margin-top: 5px;">R${{produto.precoUnitario.toFixed(2).replace('.', ',')}},00</p>
+                    <p style="margin-top: 5px;">R${{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
                     <p style="margin-top: 5px;">12x <a href="" style="color: green;">Sem juros</a></p>
 
 
@@ -63,14 +63,19 @@
 
                 <p class="text-justify" style="font-size: 15px; font-family: American Typewriter, serif; margin-left: 3px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis dolor ut voluptas totam quos expedita magnam saepe facilis ab officiis dolores accusamus, molestiae impedit necessitatibus, cum iste repudiandae sit?</p>
 
-                <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um
-          material</button>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal" routerLink='/doar-material'>Doar um
+                        material</button>
 
-                <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)='addToCart()'>Adicionar ao
-          carrinho</button>
+                    <button type="button" class="btn btn-success mt-5 ml-3 mr-3" data-dismiss="modal" (click)='addToCart()'>Adicionar ao
+                        carrinho</button>
+                </div>
 
-                <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
-                <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+                    <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
+                </div>
+
             </div>
         </div>
     </div>
