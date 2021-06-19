@@ -25,7 +25,9 @@ this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
   environment.token = this.userLogin.token
   environment.id = this.userLogin.id
   environment.nome = this.userLogin.nome
+  environment.usuario = this.userLogin.usuario
   environment.email = this.userLogin.usuario
+  environment.senha = this.userLogin.senha
   environment.usuarioVendedor = this.userLogin.usuarioVendedor
   environment.usuarioAdministrador = this.userLogin.usuarioAdministrador
   this.router.navigate(['/produtos'])
