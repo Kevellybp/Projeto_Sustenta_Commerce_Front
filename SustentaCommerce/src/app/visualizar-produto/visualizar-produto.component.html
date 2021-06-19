@@ -71,7 +71,7 @@
                         carrinho</button>
                 </div>
 
-                <div class="col-md-12 d-flex justify-content-center">
+                <div *ngIf="autor()" class="col-md-12 d-flex justify-content-center">
                     <button *ngIf="authService.vendedor()" type="button" class="btn btn-primary mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-edit', produto.id]">Editar</button>
                     <button *ngIf="authService.vendedor()" type="button" class="btn btn-danger mt-5 mr-3" data-dismiss="modal" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
                 </div>
