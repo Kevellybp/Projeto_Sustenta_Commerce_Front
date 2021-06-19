@@ -41,7 +41,7 @@
     <div class="mr-4 ml-4">
         <div class="row" style="background-color: #ffffff;">
             <!--div envolvendo todos os cards-->
-            <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
+            <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos | orderBy : key : reverse'>
 
                 <!--cada card com o produto-->
                 <div class="card" [routerLink]="['/produto', produto.id]">
@@ -52,6 +52,7 @@
                         <h4 class="nome">{{produto.nome}}</h4>
                         <small class="text-muted"></small>
                         <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
+                        <small class="mb-2">Proprietário: {{produto.usuario_produtos_criados.nome}}</small>
                         <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
                         <!--<div class="row">

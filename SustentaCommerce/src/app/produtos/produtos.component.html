@@ -103,6 +103,7 @@
                     <h4 class="nome">{{produto.nome}}</h4>
                     <small class="text-muted"></small>
                     <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
+                    <small class="mb-2">Proprietário: {{produto.usuario_produtos_criados.nome}}</small>
                     <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
                     <!--<div class="row">
@@ -128,6 +129,7 @@
 
         </div>
     </div>
+
 
 </body>
 <app-rodape></app-rodape>

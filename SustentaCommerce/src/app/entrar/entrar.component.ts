@@ -11,7 +11,10 @@ import { AuthService } from '../service/auth.service';
 })
 export class EntrarComponent implements OnInit {
 userLogin: UserLogin = new UserLogin
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(
+    private auth: AuthService,
+     private router: Router,
+     ) {
 
    }
 
