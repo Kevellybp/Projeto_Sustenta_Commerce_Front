@@ -37,43 +37,45 @@
 
 
 
-    <h1 class="mt-2 text-center">Nossos produtos:</h1>
-    <div class="row " style="background-color: #ffffff;">
-        <!--div envolvendo todos os cards-->
-        <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
+    <h1 class="mt-2 text-center" style="font-family: American Typewriter, serif;">Nossos produtos:</h1>
+    <div class="mr-4 ml-4">
+        <div class="row" style="background-color: #ffffff;">
+            <!--div envolvendo todos os cards-->
+            <div class="col-sm-4 mb-3" *ngFor='let produto of listaProdutos'>
 
-            <!--cada card com o produto-->
-            <div class="card" [routerLink]="['/produto', produto.id]">
-                <div class="d-flex justify-content-center">
-                    <img class="img-fluid imgProduto" alt="Imagem do produto" src="{{produto.foto}}">
+                <!--cada card com o produto-->
+                <div class="card" [routerLink]="['/produto', produto.id]">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid imgProduto" alt="Imagem do produto" src="{{produto.foto}}">
+                    </div>
+                    <div class="card-body text-center" style="font-family: American Typewriter, serif;">
+                        <h4 class="nome">{{produto.nome}}</h4>
+                        <small class="text-muted"></small>
+                        <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
+                        <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
+
+                        <!--<div class="row">
+    
+                            <div class="col-sm-2 mt-3" style="margin-left: 100px; " *ngFor='let produto of listaProdutos'>
+    
+                                <div class="card fundoModal " style="width: 90%" [routerLink]="['/produto', produto.id]">
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <img class="img-fluid" width="150" height="150" alt="Imagem do produto" src="{{produto.foto}}">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h4 class="nome " style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</h4>
+                                        <small class="text-muted"></small>
+                                        <p id="preco">R$ {{produto.precoUnitario}},00</p>
+                                        <Button style="color: rgb(110, 110, 110); border-radius: 15%; border-color: #D3D3D3;">
+                    <a  [routerLink]="['/produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver
+                        produto</a>
+    
+    
+                    </Button>-->
+                    </div>
                 </div>
-                <div class="card-body text-center">
-                    <h4 class="nome">{{produto.nome}}</h4>
-                    <small class="text-muted"></small>
-                    <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
-                    <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
-                    <!--<div class="row">
-
-                        <div class="col-sm-2 mt-3" style="margin-left: 100px; " *ngFor='let produto of listaProdutos'>
-
-                            <div class="card fundoModal " style="width: 90%" [routerLink]="['/produto', produto.id]">
-                                <div class="d-flex justify-content-center mt-3">
-                                    <img class="img-fluid" width="150" height="150" alt="Imagem do produto" src="{{produto.foto}}">
-                                </div>
-                                <div class="card-body text-center">
-                                    <h4 class="nome " style="font-size: 30px; font-family: American Typewriter, serif;">{{produto.nome}}</h4>
-                                    <small class="text-muted"></small>
-                                    <p id="preco">R$ {{produto.precoUnitario}},00</p>
-                                    <Button style="color: rgb(110, 110, 110); border-radius: 15%; border-color: #D3D3D3;">
-                <a  [routerLink]="['/produto', produto.id]" class="btn btn-verde w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver
-                    produto</a>
-
-
-                </Button>-->
-                </div>
             </div>
-
         </div>
     </div>
 
