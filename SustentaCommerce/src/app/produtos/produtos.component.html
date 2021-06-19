@@ -10,14 +10,14 @@
     <div class="container mb-5">
         <div *ngIf="authService.vendedor()" class="d-flex justify-content-center">
             <p>Deseja cadastrar um novo produto?</p>
-           <a  type="button" class="d-flex justify-content-center ml-3 d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
+            <a type="button" class="d-flex justify-content-center ml-3 d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
             Cadastrar
         </a>
         </div>
 
         <div *ngIf="authService.deslogado()" class="d-flex justify-content-center">
             <p>Você precisa fazer o login para cadastrar um novo produto!</p>
-          
+
         </div>
     </div>
 
@@ -71,7 +71,7 @@
                         <label for="texto">Escolha uma categoria <a data-dismiss="modal" routerLink='/categorias'> ou
                             cadastre uma nova</a>:
                     </label>
-                      
+
                         <select [(ngModel)]='idCategoria' (change)='findByIdCategoria($event)' name="tema" id="categorias" class="form-control">
                         <option *ngFor='let item of listaCategorias | orderBy : key : reverse' value="{{item.id}}">
                             {{item.departamentoProduto}}
@@ -99,10 +99,10 @@
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" alt="Imagem do produto" src="{{produto.foto}}">
                 </div>
-                <div class="card-body text-center" >
+                <div class="card-body text-center">
                     <h4 class="nome">{{produto.nome}}</h4>
                     <small class="text-muted"></small>
-                    <p id="preco">R$ {{produto.precoUnitario}}</p>
+                    <p id="preco">R$ {{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
                     <a [routerLink]="['/visualizar-produto', produto.id]" class="btn btn-success w-100" data-toggle="modal" data-target="#ExemploModalCentralizado">Ver Produto</a>
 
                     <!--<div class="row">
@@ -153,7 +153,7 @@
                             </div>
                             <div class="col-md-6">
                                 <h1>{{item.nome}}</h1>
-                                <p>R${{item.precoUnitario}},00</p>
+                                <p>R${{item.precoUnitario.toFixed(2).replace('.', ',')}}</p>
                                 <p>{{item.descricao}}</p>
                                 <p>{{item.quantidade}}</p>
                             </div>
