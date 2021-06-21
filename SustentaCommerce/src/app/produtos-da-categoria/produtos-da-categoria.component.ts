@@ -34,7 +34,6 @@ export class ProdutosDaCategoriaComponent implements OnInit {
     getProdutosDaCategoria(departamentoProduto: any) {
         this.categoriaService.getByDepartamentoCategorias(departamentoProduto).subscribe((resp: Categorias[]) => {
             let produtos = resp[0].categoria_produtos;
-            console.log(produtos)
             this.listaProdutos = produtos;
         })
     }
@@ -59,9 +58,5 @@ export class ProdutosDaCategoriaComponent implements OnInit {
         else{ok = true
             return ok}
     }
-
-
-
-
 
 }

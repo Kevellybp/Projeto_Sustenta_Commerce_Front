@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'sobre-nos', component: SobreNosComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'produtos', component: ProdutosComponent},
-  {path: 'produtos/pesquisar-produto', component: ProdutosPesquisaComponent},
+  {path: 'produtos/nome/:nome', component: ProdutosPesquisaComponent},
   {path: 'categorias', component: CategoriaComponent},
   {path: 'categoria/:departamentoProduto', component: ProdutosDaCategoriaComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},

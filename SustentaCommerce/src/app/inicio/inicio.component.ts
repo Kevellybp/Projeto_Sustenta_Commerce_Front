@@ -43,5 +43,4 @@ export class InicioComponent implements OnInit {
       this.user = resp
     })
   }
-
 }
