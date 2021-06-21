@@ -1,50 +1,81 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
-import { Categorias } from '../model/Categorias';
-import { Produtos } from '../model/Produtos';
-import { AlertasService } from '../service/alertas.service';
-import { AuthService } from '../service/auth.service';
-import { CategoriasService } from '../service/categorias.service';
-import { ProdutosService } from '../service/produtos.service';
+import {Component, OnInit} from '@angular/core';
+import {environment} from 'src/environments/environment.prod';
+import {Produtos} from '../model/Produtos';
+import {AlertasService} from '../service/alertas.service';
+import {AuthService} from '../service/auth.service';
+import {ProdutosService} from '../service/produtos.service';
+import {ActivatedRoute, Router} from "@angular/router";
+import {CategoriasService} from "../service/categorias.service";
+import {Subscription} from "rxjs";
+
 
 @Component({
-  selector: 'app-produtos-pesquisa',
-  templateUrl: './produtosPesquisa.component.html',
-  styleUrls: ['./produtosPesquisa.component.css']
+    selector: 'app-produtos-pesquisa',
+    templateUrl: './produtosPesquisa.component.html',
+    styleUrls: ['./produtosPesquisa.component.css']
 })
 export class ProdutosPesquisaComponent implements OnInit {
     produto: Produtos = new Produtos()
     listaProdutos: Produtos[]
     idCategoria: number
-    listaCategorias: Categorias[]
-    categoria: Categorias = new Categorias()
-    pesquisaParam = ""
+    nomeProdutoRouteParam: String = ""
 
     key = 'data'
     reverse = true
+    static listaProdutos: Produtos[];
+    private sub: Subscription;
 
-    
 
-  constructor(
-    private produtosService: ProdutosService,
-    public authService: AuthService,
-    private categoriaService: CategoriasService,
-    private alertas: AlertasService
-    ) { }
+    constructor(
+        public authService: AuthService,
+        private produtosService: ProdutosService,
+        private route: ActivatedRoute,
+        private router: Router,
+    ) {
+    }
 
-  ngOnInit() {
-    
-  }
+    ngOnInit() {
+        const nomeProdutoRouteParam = this.route.snapshot.paramMap.get('nome')
+        this.getProdutosByNome(nomeProdutoRouteParam);
+        this.sub = this.route.params.subscribe(params => {
+            this.getProdutosByNome(params['nome']);
+        })
+    }
 
-  onChangePesquisaProduto(event: any) {
-    this.pesquisaParam = event.target.value
-  }
+    reloadWithNewId(id: number) {
+        this.router.navigateByUrl(`/produtos/nome/${this.nomeProdutoRouteParam}`);
+    }
 
-  getProdutosFullText(){
-    this.produtosService.getProdutosByFullText(this.pesquisaParam).subscribe((resp: Produtos[]) => {
-      this.listaProdutos = resp
-      
-    })
-  }
-  
+    onChangePesquisaProduto(event: any) {
+        this.nomeProdutoRouteParam = event.target.value
+    }
+
+    getProdutosByNome(nome: any) {
+        this.produtosService.getByNomeProdutos(nome).subscribe((resp: Produtos[]) => {
+            this.listaProdutos = resp
+        })
+    }
+
+    temProdutos() {
+        let ok = true
+        if (this.listaProdutos.length != 0) {
+            ok = true
+            return ok
+        } else {
+            ok = false
+            return ok
+        }
+    }
+
+    semProdutos() {
+        let ok = false
+        if (this.listaProdutos.length != 0) {
+            ok = false
+            return ok
+        } else {
+            ok = true
+            return ok
+        }
+    }
+
 }

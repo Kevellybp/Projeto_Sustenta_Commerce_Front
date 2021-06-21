@@ -15,6 +15,7 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 import { DoarMaterialComponent } from './doar-material/doar-material.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ProdutosDaCategoriaComponent } from './produtos-da-categoria/produtos-da-categoria.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -24,8 +25,9 @@ const routes: Routes = [
   {path: 'sobre-nos', component: SobreNosComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'produtos', component: ProdutosComponent},
-  {path: 'produtos/pesquisar-produto', component: ProdutosPesquisaComponent},
+  {path: 'produtos/nome/:nome', component: ProdutosPesquisaComponent},
   {path: 'categorias', component: CategoriaComponent},
+  {path: 'categoria/:departamentoProduto', component: ProdutosDaCategoriaComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'produto-edit/:id', component: ProdutoEditComponent},

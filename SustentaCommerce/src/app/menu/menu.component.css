@@ -93,3 +93,7 @@
 i:hover {
     color: rgba(124, 124, 124, 0.5);
 }
+
+.item-ul-navbar-categoria {
+    cursor: pointer;
+}

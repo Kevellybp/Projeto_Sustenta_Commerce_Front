@@ -4,16 +4,12 @@
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 16px;
+    font-family: American Typewriter, serif;
 }
 
-.aoLado,
-img {
-    display: inline-block
-}
 
-img {
-    width: 236px;
-    height: 354px;
+.btn-acao-produto {
+    height: 3rem;
+    min-width: 100%
 }
