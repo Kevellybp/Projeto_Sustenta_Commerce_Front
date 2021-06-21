@@ -14,6 +14,11 @@ export class CadastrarComponent implements OnInit {
   user: Usuario = new Usuario
   confirmarSenha: string
 
+  nomeValido: boolean = false;
+  emailValido: boolean = false;
+  senhaValida: boolean = false;
+  usuarioValido: boolean = false;
+
   constructor(private authService: AuthService,
      private router: Router,
      private alertas: AlertasService
@@ -42,5 +47,30 @@ export class CadastrarComponent implements OnInit {
        this.alertas.showAlertSucess('Usuário cadastrado com sucesso!')
       })
     }
+  }
+
+  validacao(condicao: boolean, event:any){
+    let valid = false;
+    if(condicao){
+      event.target.classList.remove("is-valid");
+      event.target.classList.add("is-invalid");
+    }else{
+      event.target.classList.remove("is-invalid");
+      event.target.classList.add("is-valid");
+      valid = true;
+    }
+    return valid;
+  }
+
+  validaNome(event: any){
+    this.nomeValido = this.validacao(event.target.value.length < 3, event);
+  }
+
+  validaEmail(event: any){
+    this.emailValido = this.validacao(event.target.value.indexOf('@') == -1 || event.target.value.indexOf('.') == -1, event);
+  }
+
+  validaUsuario(event: any){
+    this.usuarioValido = this.validacao(event.target.value.length < 3, event);
   }
 }

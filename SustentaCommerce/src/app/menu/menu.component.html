@@ -1,100 +1,60 @@
 <!---inicio Menu -->
-
 <div class="d-flex flex-column">
-    <nav class="navbar-expand-lg navbar d-flex justify-content-between flex-row flex-wrap align-items-center" style="background-color: var(--background-green)">
 
-        <div class="d-flex flex-row align-items-center" style="flex: 2">
-            <a class="navbar-brand d-flex flex-row align-items-center" routerLink='/inicio'>
-                <img src="../../assets/logo-sustenta-transparente.png" alt="Logo Sustenta Commerce" width="70px" height="70px" class="">
-                <h4 class="m-0 p-2 fs"> Sustenta Commerce</h4>
-            </a>
-        </div>
-        <!--
-        <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle btnCategoria text-bold" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categoria  
-            </button>
-            <div *ngFor="let item of listaCategorias" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">{{item.id}}</a>                
-            </div>
-             
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link dropdown" 
-                    routerLink='/inicio'                 
-                    style="color: gainsboro;">Categoria</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: var(--background-green)">
+        <a class="navbar-brand d-flex flex-row align-items-center" routerLink='/inicio'>
+            <img src="../../assets/logo-sustenta-transparente.png" alt="Logo Sustenta Commerce" width="70px"
+                 height="70px" class="">
+            <h4 class="m-0 p-2 fs"> Sustenta Commerce</h4>
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+            <form class="d-flex no-wrap my-2 my-lg-0">
+                <input (change)='onChangePesquisaProduto($event)' class="form-control" type="search"
+                       placeholder="Pesquisar" style="height: 3rem; border-right: none; border-radius: 0px">
+                <div class="input-group-append">
+                    <button type="submit" (click)='getProdutosFullText()' class="input-group-text"
+                            style="background-color: white; border-left: none; height: 3rem; border-radius: 0px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                             class="bi bi-search m-0 p-0" viewBox="0 0 16 16" style="opacity: 0.3">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <ul class="navbar-nav flex-row d-flex my-2 my-lg-0">
+                <i class="fa fa-shopping-cart  ml-2" routerLink='/carrinho'></i>
+                <li class="nav-item  ml-2"></li>
+
+                <li *ngIf="authService.deslogado()" class="nav-item ml-2">
+                    <a class="pLogin" routerLink='/entrar'>Login</a>
+                </li>
+
+                <li *ngIf="authService.logado()" class="nav-item  ml-2">
+                    <a class="pLogin" (click)='sair()'>Deslogar</a>
                 </li>
             </ul>
         </div>
-        -->
-
-        <div class="d-flex justify-content-end flex-row flex-wrap">
-            <form class="input-group flex-nowrap justify-content-flex-end  mt-3 mb-3 pl-4 pr-4" style="height:3rem; min-width:400px ;width:100%; flex: 1">
-                <input (change)='onChangePesquisaProduto($event)' type="text" class="form-control m-0 pl-2 pr-2 p-0" placeholder="Pesquisar" style="height:3rem; border:none; border-radius: 0px">
-                <button  type="submit" (click)='getProdutosFullText()' class="input-group-prepend d-flex justify-content-center align-items-center m-0 p-0" style="height:3rem; width:3rem; background-color: white; border: none; ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search m-0 p-0" viewBox="0 0 16 16" style="opacity: 0.3">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                </button>
-            </form>
-
-            <!--
-            <form class="form-inline d-flex  flex-row" style="flex: 3; min-width:350px">
-                <input class="form-control  inputpesquisa" style="width: 90%" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn" style="width: 10%" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </form>
-            -->
-
-            <div class="d-flex flex-row justify-content-end align-items-center  mt-3 mb-3 pl-4 pr-4" style="flex: 1">
-
-                <ul class="navbar-nav flex-row d-flex">
-                    <i class="fa fa-shopping-cart  ml-2" routerLink='/carrinho'></i>
-                    <li class="nav-item  ml-2"></li>
-
-                    <li *ngIf="authService.deslogado()" class="nav-item ml-2">
-                        <a class="pLogin" routerLink='/entrar'>Login</a>
-                    </li>
-
-                    <li *ngIf="authService.logado()" class="nav-item  ml-2">
-                        <a class="pLogin" (click)='sair()'>Deslogar</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <button class="navbar-toggler" style="align-self: flex-end" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
     </nav>
 
-    <nav class="navbar navbar-expand-lg p-0 m-0 " style="background-color: var(--logo-green); height: 3rem;">
+    <nav class="navbar d-none d-xl-flex p-0" style="background-color: var(--background-green); height: 3rem;">
         <div class="d-flex justify-content-center w-100 h-100">
-            <ul style="list-style: none" class="d-flex justify-content-center flex-row w-75 m-0 p-0 ul-navbar-categorias l1">
-                <li class="d-flex pl-4 pr-4 h-100 align-items-center item-ul-navbar-categoria">
-                    <a>
-                        Palete
-                    </a>
-                </li>
-                <li class="d-flex pl-4 pr-4 h-100 align-items-center item-ul-navbar-categoria">
-                    <a>
-                        Vidro
-                    </a>
-                </li>
-                <li class="d-flex pl-4 pr-4 align-items-center item-ul-navbar-categoria">
-                    <a>
-                        Plástico
-                    </a>
-                </li>
-                <li class="d-flex pl-4 pr-4 align-items-center item-ul-navbar-categoria">
-                    <a>
-                        Crochê
-                    </a>
-                </li>
-                <li class="d-flex pl-4 pr-4 align-items-center item-ul-navbar-categoria">
-                    <a>
-                        Pneu
+            <ul style="list-style: none"
+                class="d-flex justify-content-center flex-row w-75 m-0 p-0 ul-navbar-categorias l1">
+                <li *ngFor='let item of stringsCategorias | orderBy : key : reverse'
+                    class="d-flex pl-4 pr-4 h-100 align-items-center item-ul-navbar-categoria">
+                    <a href="/categoria/{{item}}" style="color: black">
+                        {{item}}
                     </a>
                 </li>
             </ul>
         </div>
-
     </nav>
-
 </div>

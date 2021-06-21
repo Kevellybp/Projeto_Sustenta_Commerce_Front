@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produtos';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
@@ -16,6 +17,7 @@ export class VisualizarProdutoComponent implements OnInit {
   carrinho: Produtos[]
   quantidade: number
   valor: number
+  idUsuario: number = environment.id
 
   constructor(
     private route: ActivatedRoute,
@@ -57,5 +59,16 @@ export class VisualizarProdutoComponent implements OnInit {
     localStorage.setItem('carrinho', JSON.stringify(this.carrinho))
    this.alertas.showAlertSucess('Produto adicionado ao carrinho')
     this.router.navigate(['/inicio'])
+  }
+
+  autor() {
+    let ok:boolean = false
+
+    if(this.produto.usuario_produtos_criados.id == this.idUsuario){
+    ok = true
+      
+    }
+
+    return ok
   }
 }

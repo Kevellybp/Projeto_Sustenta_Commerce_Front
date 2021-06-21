@@ -49,11 +49,6 @@ export class CarrinhoComponent implements OnInit {
     let dadosProduto = []
     dadosProduto = JSON.parse(localStorage.getItem('carrinho') || '{}')
     dadosProduto.forEach((i: any) => {
-      this.valorCarrinho = {
-        valor: i.valorParcial
-      }
-
-
       this.precoTotal += this.valorCarrinho.valor
     })
     return this.precoTotal.toFixed(2)

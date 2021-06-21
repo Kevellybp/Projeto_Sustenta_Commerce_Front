@@ -1,6 +1,6 @@
 .fs-16 {
     font-size: 20pt;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: American Typewriter, serif;
     color: black;
 }
 
@@ -92,4 +92,8 @@
 
 i:hover {
     color: rgba(124, 124, 124, 0.5);
+}
+
+.item-ul-navbar-categoria {
+    cursor: pointer;
 }

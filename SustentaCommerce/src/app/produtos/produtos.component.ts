@@ -48,6 +48,8 @@ export class ProdutosComponent implements OnInit {
     window.scroll(0,0);
     this.findAllProdutos();
     this.findAllCategorias();
+    this.findByIdUser();
+    console.log(this.user);
   }
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produtos[])=>{
@@ -59,6 +61,18 @@ export class ProdutosComponent implements OnInit {
     this.produto.categoria_produtos_criados = this.categoria
     this.produto.categoria_produtos_criados.id = this.idCategoriaEscolhida;
     this.produto.categoria_produtos_criados.departamentoProduto = this.departamentoProdutoCategoriaEscolhida;
+
+    this.findByIdUser();
+    this.produto.usuario_produtos_criados = this.user
+    this.produto.usuario_produtos_criados.id = this.user.id
+    this.produto.usuario_produtos_criados.nome = this.user.nome
+    this.produto.usuario_produtos_criados.email = this.user.email
+    this.produto.usuario_produtos_criados.senha = this.user.senha
+    this.produto.usuario_produtos_criados.usuario = this.user.usuario
+    this.produto.usuario_produtos_criados.usuarioVendedor = this.user.usuarioVendedor
+    this.produto.usuario_produtos_criados.usuarioAdministrador = this.user.usuarioAdministrador
+    
+
     
     this.produtosService.postProduto(this.produto).subscribe((resp: Produtos)=>{
       this.produto = resp
@@ -87,7 +101,7 @@ export class ProdutosComponent implements OnInit {
   } 
 
   findByIdUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+    this.authService.getByIdUser(environment.id).subscribe((resp: Usuario) => {
       this.user = resp
     })
   }
@@ -111,5 +125,6 @@ export class ProdutosComponent implements OnInit {
       })
     }
   }
+
 
 }

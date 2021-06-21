@@ -1,313 +1,71 @@
-<!--- body style="background-color: #d4e0bb;">
-    <hr class="mt-5 mb-3">
-  
-  
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Título do card</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
-    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-    <a href="#" class="card-link">Link do card</a>
-    <a href="#" class="card-link">Outro link</a>
-  </div>
-</div>  footer ->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="first">
-
-
-                        <div>
-                            <h3>
-                                Navegue
-                            </h3>
-                            <p><a routerLink='/inicio'>Home</a></p>
-                            <p><a routerLink='/produtos'>Produtos</a></p>
-                            <p><a routerLink='/sobre-nos'>Sobre nós</a></p>
-                            <p><a routerLink='/categorias'>Categorias</a></p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <h3 class="text-center">Certificação:</h3>
-                    <a href="https://i.imgur.com/R0nHciz.png" target="_blank"><img class="mb-4 mt-3" src="https://images-ext-1.discordapp.net/external/uSVhC48UzZWfXmRu1AAjE-GUsuDB-3bH0_QPOEriOa0/https/lh3.googleusercontent.com/proxy/ot1ESv0qITn9YrN9pBS5OPmJ0V_FOe91_FaTspJKd81QswSRbaUmq8xUjkUAn-C3nquAERwwMQjtxyTZJ6xv80b9OXtlOER8iifYDF-Q-_Bs_jgoZHsVeO86ff39"
-                            alt="Certificado selo verde"></a>
-                </div>
-
-
-                <div class="d-flex justify-content-end col-md-4">
-                    <div class="second">
-                        <h4> Criadores</h4>
-                        <p><a routerLink='/sobre-nos'>Juliana Sousa</a></p>
-                        <p><a routerLink='/sobre-nos'>Kevelly Braga</a></p>
-                        <p><a routerLink='/sobre-nos'>Patricia Araujo</a></p>
-                        <p><a routerLink='/sobre-nos'>Roberto Locatelli</a></p>
-                        <p><a routerLink='/sobre-nos'>Thiago Silva</a></p>
-
-                    </div>
-                </div>
-
+<footer class="d-flex flex-column">
+    <div class="d-flex flex-wrap flex-row justify-content-between">
+        <div class="d-flex" style="flex: 1">
+            <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                <a href="#">
+                    <img src="../../assets/logo-sustenta-transparente.png " width="200px" height="200px"
+                         routerLink='/inicio'>
+                </a>
+                <h2 style="text-align: center">Sustenta Commerce</h2>
+                <p style="text-align: center">Sustentabilidade começa no nosso consumo </p>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="line"></div>
-                    <div class="second2">
-                        <p class="text-center"> &copy; 2021 Todos os direitos reservados</p>
-                    </div>
+        <div class="d-flex flex-wrap flex-row justify-content-between" style="flex: 1">
+            <div class="d-flex flex-column p-4" style="flex: 1">
+                <div class="navegue-footer">
+                    <h2>Navegue</h2>
+                    <ul class="footer-list footer-navegue-list">
+                        <li>
+                            <a routerLink='/sobre-nos'>
+                                <p> Sobre nós</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink='/produtos'>
+                                <p>
+                                    Produtos
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink='/categorias'>
+                                <p>
+                                    Categorias
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink='/cadastrar'>
+                                <p>Cadastro</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://chat.whatsapp.com/DYaqFW2PvfOArB6ZHuNzIb" target="_blank"
+                               class="icoLinkedin estiloEscrita card-text">
+                                <p>Whatsapp&nbsp;<i style="" class="fa fa-whatsapp" aria-hidden="true"></i></p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:grupo7generation@gmail.com" target="_blank" class="estiloEscrita">
+                                <p>E-mail</p>
+                            </a>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
-        </div>
-    </div>
-</body -->
-
-
-
-
-
-
-
-
-
-
-<!-- -->
-<!-- 
-<div class="row fundoRoda" >
-
-    <div class="col-sm-2 estiloEscrita " style="margin-left: 150px; margin-top: 20px;">
-        <div class="card fundoRoda">
-             <div class="">
-                <h5 class="card-title" style="color: black; font-size: 30px; font-family: American Typewriter, serif;">
-                    Sobre</h5>
-                <a routerLink='/sobre-nos' class="estiloEscrita">
-                    Sobre nós
-                </a>
-                <a href="https://brasilescola.uol.com.br/busca?q=meio+ambiente" target="_blank" class="estiloEscrita">
-                    <p class="card-text">
-                        Meio Ambiente
-                    </p>
-                </a>
-
-                <a href="https://brasilescola.uol.com.br/educacao/sustentabilidade.htm" target="_blank"
-                    class="estiloEscrita">
-                    <p class="card-text">
-                        Sustentabilidade
-                    </p>
-                </a>
-            </div> 
-        </div>
-    </div>
-
-
-    <div class="col-sm-2 estiloEscrita "> 
-        <div class="card fundoRoda"  >
-            <div class="card-title" style="margin-left: 20px; margin-top: 20px;">
-                <h5 style="color: black; font-size: 30px; font-family: American Typewriter, serif;">Navegue</h5>
-                    <a  routerLink='/produtos' class="estiloEscrita">
-                    <p class="card-text">
-                        Produtos
-                    </p>
-                </a>
-
-                <a   routerLink='/categorias' class="estiloEscrita">
-                    <p class="card-text">
-                        Categorias
-                    </p>
-                </a>
-
-                <a routerLink='/sobre-nos' class="estiloEscrita">
-                    Sobre nós
-                    
-                </a>
-
-                                            
-              </div>
-        </div>
-    </div>
-
-
-
-    <div class="col-sm-3 estiloEscrita">
-        <div class="card fundoRoda">
-            <div class="card-body">
-                <h5 class="card-title" style="color: black; font-size: 30px; font-family: American Typewriter, serif;">
-                    Contato</h5>
-                <a href="https://chat.whatsapp.com/DYaqFW2PvfOArB6ZHuNzIb" target="_blank"
-                    class="icoLinkedin estiloEscrita card-text">
-                    Sustenta whatsapp
-                    <i style="margin-left: 3px;" class="fa fa-whatsapp" aria-hidden="true"></i>
-                </a>
-
-                <a href="" target="_blank" class="estiloEscrita">
-                    <p class="card-text">
-                        Sustenta E-mail
-                    </p>
-                </a>
-
-                <a href="" target="_blank" class="estiloEscrita">
-                    <p class="card-text">
-                        Sustenta redes sociais
-                    </p>
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="col-sm-3 estiloEscrita "> 
-        <div class="card fundoRoda "  >
-            <div class="card-title"  style="margin-left: 20px; margin-top: 20px; " >
-                <h5 style="color: black; font-size: 30px; font-family: American Typewriter, serif;">Desenvolvedores</h5>
-                    <a  routerLink='/sobre-nos' class="estiloEscrita">
-                    <p class="card-text">
-                        Juliana Sousa 
-                    </p>
-                </a>
-
-                <a   routerLink='/sobre-nos' class="estiloEscrita">
-                    <p class="card-text">
-                        Kevelly Braga
-                    </p>
-                </a>
-
-                <a  routerLink='/sobre-nos' class="estiloEscrita">
-                    <p class="card-text">
-                        Patricia Araujo
-                    </p>
-                </a>
-
-                <a  routerLink='/sobre-nos' class="estiloEscrita">
-                    <p class="card-text">
-                        Roberto Locatelli
-                    </p>
-                </a>
-
-                <a  routerLink='/sobre-nos' class="estiloEscrita">
-                    <p class="card-text">
-                        Thiago Silva
-                    </p>
-                </a>
-              
-
-            </div>
-        </div>
-    </div>
-
-
-
-</div>
-
-<div class="col-12 fundoRoda" style="background-color: #A9A9A9;">
-    <div class="line"></div>
-    <div class="second2">
-        <p class="text-center"> &copy; 2021 Todos os direitos reservados</p>
-    </div> -->
-<footer>
-    <div class="wrapper ">
-        <div class="footer-box ">
-            <div class="company-footer">
-                <a href="#"><img src="../../assets/logo-sustenta-transparente.png " width="200px" height="200px" routerLink='/inicio'></a>
-                <h2>Sustenta Commerce</h2>
-                <p>Sustentabilidade começa no nosso consumo </p>
-
-            </div>
-            
-        </div>
-        <div class="footer-box">
-            <div class="navegue-footer">
-                <h2>Navegue</h2>
+            <div class="d-flex flex-column p-4" style="flex: 1">
+                <a routerLink='/sobre-nos'><h2>Desenvolvedores</h2></a>
                 <ul class="footer-list footer-navegue-list">
-                    <li>
-                        <a routerLink='/sobre-nos'>
-                            <p> Sobre nós</p>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a  routerLink='/produtos' >
-                            <p>
-                                Produtos
-                            </p>
-                        </a>
-
-                    </li>    
-                    <li>
-                        <a   routerLink='/categorias' >
-                            <p>
-                                Categorias
-                            </p>
-                        </a>
-
-                    
-                    </li>
-                    <li>
-                        <a routerLink='/cadastrar'>
-                            <p>Cadastro</p>
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="https://chat.whatsapp.com/DYaqFW2PvfOArB6ZHuNzIb" target="_blank"
-                             class="icoLinkedin estiloEscrita card-text">
-                               <p> Sustenta whatsapp <i style="margin-left: 3px;" class="fa fa-whatsapp" aria-hidden="true"></i> </p> 
-                            
-                        </a>
-                    </li>   
-                    <li>
-                        <a href="" target="_blank" class="estiloEscrita">
-                            <p>
-                                Sustenta E-mail
-                            </p>
-                        </a>
-                    </li>    
+                    <li>Juliana Souza</li>
+                    <li>Kevelly Braga</li>
+                    <li>Patricia Araújo</li>
+                    <li>Roberto Locatelli</li>
+                    <li>Thiago Silva</li>
                 </ul>
-
             </div>
-
-
-        </div>
-        <div class="footer-box">
-            <h2>Desenvolvedores</h2>
-            <ul class="footer-list footer-navegue-list">
-                <li>
-                    <a routerLink='/sobre-nos'>
-                        <p>Juliana Souza</p>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink='/sobre-nos'>
-                        <p>Kevelly Braga</p>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink='/sobre-nos'>
-                        <p>Patricia Araújo</p>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink='/sobre-nos'>
-                        <p>Roberto Locatelli</p>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink='/sobre-nos'>
-                        <p>Thiago Silva</p>
-                    </a>
-                </li>                
-            </ul>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div class="wrapper">
-            <p class="text-center"> &copy; 2021 Todos os direitos reservados</p>
-        </div>
+    <p class="text-center"> &copy; 2021 Todos os direitos reservados</p>
 
-    </div>
 </footer>    
