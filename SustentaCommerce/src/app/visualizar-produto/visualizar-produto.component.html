@@ -8,43 +8,46 @@
         </div>
 
 
-        <div class="col-md-6 container justify-content-center my-2">
-            <h1 class="my-4">{{produto.nome}}</h1>
+        <div class="container d-flex justify-content-center">
+            <div class="col-md-6 container justify-content-center my-2">
+                <h1 class="my-4">{{produto.nome}}</h1>
 
-            <div class="dropdown my-3 p-0">
-                <button class="btn btn-transparent dropdown-toggle m-0 p-0" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Unidades
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item">1</a>
-                    <a class="dropdown-item">2</a>
-                    <a class="dropdown-item">3</a>
-                    <a class="dropdown-item">4</a>
+                <div class="dropdown my-3 p-0">
+                    <button class="btn btn-transparent dropdown-toggle m-0 p-0" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Unidades
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item">1</a>
+                        <a class="dropdown-item">2</a>
+                        <a class="dropdown-item">3</a>
+                        <a class="dropdown-item">4</a>
+                    </div>
                 </div>
-            </div>
 
-            <p class="my-3">R${{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
-            <p class="my-3">12x <a href="" style="color: green;">Sem juros</a></p>
+                <p class="my-3">R${{produto.precoUnitario.toFixed(2).replace('.', ',')}}</p>
+                <p class="my-3">12x <a href="" style="color: green;">Sem juros</a></p>
 
 
-            <div class="dropdown my-3">
-                <button class="btn btn-transparent dropdown-toggle m-0 p-0" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Formas de pagamento
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item"> <i class="fa fa-credit-card"></i></a>
-                    <a class="dropdown-item"> <i class="fa fa-cc-paypal"></i></a>
+                <div class="dropdown my-3">
+                    <button class="btn btn-transparent dropdown-toggle m-0 p-0" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Formas de pagamento
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item"> <i class="fa fa-credit-card"></i></a>
+                        <a class="dropdown-item"> <i class="fa fa-cc-paypal"></i></a>
+                    </div>
                 </div>
-            </div>
 
 
-            <div>
-                <strong class="my-3">Descrição do produto</strong>
-                <p>{{produto.descricao}}</p>
+                <div>
+                    <strong class="my-3">Descrição do produto</strong>
+                    <p>{{produto.descricao}}</p>
+                </div>
             </div>
         </div>
+
     </div>
     <div class="container d-flex justify-content-center">
         <div class="col-md-6  my-2 mx-0 p-0">

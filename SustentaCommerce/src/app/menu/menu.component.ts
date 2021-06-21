@@ -6,6 +6,8 @@ import { Produtos } from '../model/Produtos';
 import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
+import { ProdutosDaCategoriaComponent } from '../produtos-da-categoria/produtos-da-categoria.component';
+
 
 @Component({
   selector: 'app-menu',
@@ -17,11 +19,14 @@ export class MenuComponent implements OnInit {
   pesquisaParam = ""
   nome = environment.nome
   idCategoria: number
+  produtoCategoria: string
   listaCategorias: Categorias[]
   listaProdutos: Produtos[]
   categoria: Categorias = new Categorias()
   produtos: Produtos = new Produtos()
-
+  stringsCategorias = ["Palete", "Vidro", "Plástico", "Crochê", "Pneu"]
+  key = 'data'
+  reverse = true
 
 
 
